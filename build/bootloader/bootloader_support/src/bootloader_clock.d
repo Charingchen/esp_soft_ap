@@ -13,7 +13,7 @@ src/bootloader_clock.o: \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_dport_access.h \
- c:\msys32\home\esp\soft-ap\build\include\sdkconfig.h \
+ c:\msys32\home\esp\esp_soft_ap\build\include\sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/efuse_reg.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h
 
@@ -43,7 +43,7 @@ C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h:
 
 C:/msys32/home/esp/esp-idf/components/esp32/include/esp_dport_access.h:
 
-c:\msys32\home\esp\soft-ap\build\include\sdkconfig.h:
+c:\msys32\home\esp\esp_soft_ap\build\include\sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/efuse_reg.h:
 

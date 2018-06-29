@@ -8,7 +8,7 @@ library/ssl_stack.o: \
  C:/msys32/home/esp/esp-idf/components/openssl/include/internal/x509_vfy.h \
  C:/msys32/home/esp/esp-idf/components/openssl/include/internal/ssl_dbg.h \
  C:/msys32/home/esp/esp-idf/components/openssl/include/platform/ssl_opt.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/openssl/include/platform/ssl_port.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_types.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/cdefs.h \
@@ -58,7 +58,7 @@ C:/msys32/home/esp/esp-idf/components/openssl/include/internal/ssl_dbg.h:
 
 C:/msys32/home/esp/esp-idf/components/openssl/include/platform/ssl_opt.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/openssl/include/platform/ssl_port.h:
 

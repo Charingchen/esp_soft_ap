@@ -1,266 +1,266 @@
 Archive member included to satisfy reference by file (symbol)
 
-C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
                               (call_start_cpu0)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o) (bootloader_utility_load_partition_table)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o) (bootloader_init)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o) (bootloader_mmap)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o) (bootloader_random_enable)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o) (esp_image_load)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o) (esp_partition_table_basic_verify)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o) (bootloader_clock_configure)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o) (bootloader_common_ota_select_valid)
-C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o) (bootloader_sha256_start)
-C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o) (esp_log_timestamp)
-C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o) (esp_rom_spiflash_unlock)
-C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o) (rtc_clk_slow_freq_get)
-C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o) (rtc_clk_cal_ratio)
-C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o) (rtc_vddsdio_get_config)
-C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o) (esp_cpu_in_ocd_debug_mode)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o) (bootloader_utility_load_partition_table)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o) (bootloader_init)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o) (bootloader_mmap)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o) (bootloader_random_enable)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o) (esp_image_load)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o) (esp_partition_table_basic_verify)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o) (bootloader_clock_configure)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o) (bootloader_common_ota_select_valid)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o) (bootloader_sha256_start)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o) (esp_log_timestamp)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o) (esp_rom_spiflash_unlock)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o) (rtc_clk_slow_freq_get)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o) (rtc_clk_cal_ratio)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o) (rtc_vddsdio_get_config)
+C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o) (esp_cpu_in_ocd_debug_mode)
 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o) (__bswapsi2)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o) (__bswapsi2)
 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
-                              C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o) (__udivdi3)
+                              C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o) (__udivdi3)
 
 Allocating common symbols
 Common symbol       size              file
 
 esp_image_spi_freq_t
-                    0x4               C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                    0x4               C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
 
 Discarded input sections
 
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .xt.lit        0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .xt.prop       0x00000000       0xe4 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- COMMON         0x00000000        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .xt.lit        0x00000000       0x40 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .xt.prop       0x00000000      0x4bc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .xt.lit        0x00000000       0x58 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .xt.prop       0x00000000      0x42c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .xt.lit        0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .xt.prop       0x00000000       0xe4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ COMMON         0x00000000        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .xt.lit        0x00000000       0x40 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .xt.prop       0x00000000      0x4bc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .xt.lit        0x00000000       0x58 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .xt.prop       0x00000000      0x42c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  .literal.bootloader_flash_write
-                0x00000000       0x40 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x00000000       0x40 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  .literal.bootloader_flash_erase_sector
-                0x00000000        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x00000000        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  .text.bootloader_flash_write
-                0x00000000       0xb2 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x00000000       0xb2 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  .text.bootloader_flash_erase_sector
-                0x00000000       0x16 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .xt.lit        0x00000000       0x40 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .xt.prop       0x00000000      0x360 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .xt.lit        0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .xt.prop       0x00000000       0xcc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                0x00000000       0x16 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .xt.lit        0x00000000       0x40 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .xt.prop       0x00000000      0x360 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .xt.lit        0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .xt.prop       0x00000000       0xcc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
  .literal.esp_image_verify_bootloader
-                0x00000000        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .rodata        0x00000000        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x00000000        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .rodata        0x00000000        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
  .text.esp_image_verify_bootloader
-                0x00000000       0x32 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .xt.lit        0x00000000       0x50 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .xt.prop       0x00000000      0x66c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .xt.lit        0x00000000        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .xt.prop       0x00000000      0x144 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .xt.lit        0x00000000        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .xt.prop       0x00000000       0x60 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .xt.lit        0x00000000       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .xt.prop       0x00000000       0x90 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .xt.lit        0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .xt.prop       0x00000000      0x198 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x00000000       0x32 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .xt.lit        0x00000000       0x50 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .xt.prop       0x00000000      0x66c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .xt.lit        0x00000000        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .xt.prop       0x00000000      0x144 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .xt.lit        0x00000000        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .xt.prop       0x00000000       0x60 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .xt.lit        0x00000000       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .xt.prop       0x00000000       0x90 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .xt.lit        0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .xt.prop       0x00000000      0x198 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
  .literal.esp_log_buffer_hex_internal
-                0x00000000       0x50 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x00000000       0x50 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .literal.esp_log_buffer_char_internal
-                0x00000000       0x50 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x00000000       0x50 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .literal.esp_log_buffer_hexdump_internal
-                0x00000000       0x78 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x00000000       0x78 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .rodata.str1.4
-                0x00000000       0xa6 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x00000000       0xa6 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .text.esp_log_buffer_hex_internal
-                0x00000000      0x11a C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x00000000      0x11a C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .text.esp_log_buffer_char_internal
-                0x00000000      0x107 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x00000000      0x107 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .text.esp_log_buffer_hexdump_internal
-                0x00000000      0x1da C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .xt.lit        0x00000000       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .xt.prop       0x00000000      0x354 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x00000000      0x1da C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .xt.lit        0x00000000       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .xt.prop       0x00000000      0x354 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .literal.spi_cache_mode_switch
-                0x00000000       0x38 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x38 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_erase_chip_internal
-                0x00000000       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_erase_block_internal
-                0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_erase_sector_internal
-                0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_enable_write
-                0x00000000       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_program_page_internal
-                0x00000000       0x24 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x24 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_lock
-                0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_config_readmode
-                0x00000000       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_erase_chip
-                0x00000000        0xc C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_erase_block
-                0x00000000       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_erase_sector
-                0x00000000       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_write
-                0x00000000       0x28 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x28 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_write_encrypted
-                0x00000000       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.esp_rom_spiflash_erase_area
-                0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.spi_cache_mode_switch
-                0x00000000      0x266 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000      0x266 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_erase_chip_internal
-                0x00000000       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_erase_block_internal
-                0x00000000       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_erase_sector_internal
-                0x00000000       0x44 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x44 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_enable_write
-                0x00000000       0x3d C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x3d C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_program_page_internal
-                0x00000000       0xee C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0xee C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_lock
-                0x00000000       0x4e C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x4e C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_config_readmode
-                0x00000000       0xa0 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0xa0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .rodata.esp_rom_spiflash_config_readmode
-                0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_erase_chip
-                0x00000000       0x24 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x24 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_erase_block
-                0x00000000       0x66 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x66 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_erase_sector
-                0x00000000       0x65 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x65 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_write
-                0x00000000       0xca C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0xca C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_write_encrypted
-                0x00000000       0x5a C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0x5a C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .text.esp_rom_spiflash_erase_area
-                0x00000000       0xbe C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .xt.lit        0x00000000       0xa8 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .xt.prop       0x00000000      0xb1c C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000       0xbe C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .xt.lit        0x00000000       0xa8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .xt.prop       0x00000000      0xb1c C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .literal.rtc_clk_32k_bootstrap
-                0x00000000       0x34 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x34 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .literal.rtc_clk_32k_enabled
-                0x00000000        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .literal.rtc_clk_apll_enable
-                0x00000000       0x50 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x50 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .literal.rtc_clk_slow_freq_get_hz
-                0x00000000       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .literal.rtc_clk_cpu_freq_from_mhz
-                0x00000000        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .literal.rtc_clk_cpu_freq_to_xtal
-                0x00000000       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .literal.rtc_clk_cpu_freq_to_pll
-                0x00000000       0x38 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x38 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .literal.rtc_clk_cpu_freq_set_fast
-                0x00000000       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.rtc_clk_32k_bootstrap
-                0x00000000       0xa2 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0xa2 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.rtc_clk_32k_enabled
-                0x00000000       0x1a C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x1a C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.rtc_clk_apll_enable
-                0x00000000      0x15a C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000      0x15a C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.rtc_clk_slow_freq_get_hz
-                0x00000000       0x27 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x27 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.rtc_clk_cpu_freq_from_mhz
-                0x00000000       0x4c C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x4c C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.rtc_clk_cpu_freq_to_xtal
-                0x00000000       0x6f C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x6f C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.rtc_clk_cpu_freq_to_pll
-                0x00000000       0xd1 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0xd1 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.rtc_clk_cpu_freq_set_fast
-                0x00000000       0x38 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .xt.lit        0x00000000       0xd8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .xt.prop       0x00000000      0xb94 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000000       0x38 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .xt.lit        0x00000000       0xd8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .xt.prop       0x00000000      0xb94 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .literal.rtc_clk_cal
-                0x00000000        0xc C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x00000000        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  .literal.rtc_time_us_to_slowclk
-                0x00000000        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x00000000        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  .literal.rtc_time_get
-                0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  .text.rtc_clk_cal
-                0x00000000       0x52 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x00000000       0x52 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  .text.rtc_time_us_to_slowclk
-                0x00000000       0x1f C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x00000000       0x1f C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  .text.rtc_time_slowclk_to_us
-                0x00000000       0x1c C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x00000000       0x1c C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  .text.rtc_time_get
-                0x00000000       0x50 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .xt.lit        0x00000000       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .xt.prop       0x00000000      0x258 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x00000000       0x50 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .xt.lit        0x00000000       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .xt.prop       0x00000000      0x258 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  .literal.rtc_init
-                0x00000000       0xb8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+                0x00000000       0xb8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
  .text.rtc_init
-                0x00000000      0x344 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .xt.lit        0x00000000       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .xt.prop       0x00000000       0xfc C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .text          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
- .data          0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
- .bss           0x00000000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
- .xt.lit        0x00000000        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
- .xt.prop       0x00000000       0xc0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+                0x00000000      0x344 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .xt.lit        0x00000000       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .xt.prop       0x00000000       0xfc C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .text          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .data          0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .bss           0x00000000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .xt.lit        0x00000000        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .xt.prop       0x00000000       0xc0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .data          0x00000000        0x0 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .bss           0x00000000        0x0 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .xt.lit        0x00000000        0x8 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
@@ -281,12 +281,12 @@ dram_seg         0x3fff0000         0x00010000         rw
 Linker script and memory map
 
 START GROUP
-LOAD C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a
-LOAD C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a
-LOAD C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a
-LOAD C:/msys32/home/esp/soft-ap/build/bootloader/micro-ecc\libmicro-ecc.a
-LOAD C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a
-LOAD C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a
+LOAD C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a
+LOAD C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a
+LOAD C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a
+LOAD C:/msys32/home/esp/esp_soft_ap/build/bootloader/micro-ecc\libmicro-ecc.a
+LOAD C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a
+LOAD C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a
 LOAD c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a
 LOAD c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib\libstdc++.a
 LOAD c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcov.a
@@ -312,16 +312,16 @@ END GROUP
  *(.dynbss)
  *(.bss)
  *(.bss.*)
- .bss.mapped    0x3fff0000        0x1 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .bss.mapped    0x3fff0000        0x1 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  *fill*         0x3fff0001        0x3 
  .bss.ram_obfs_value
-                0x3fff0004        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x3fff0004        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
  .bss.words_hashed
-                0x3fff000c        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x3fff000c        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
  .bss.s_cur_freq
-                0x3fff0010        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x3fff0010        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .bss.s_cur_pll
-                0x3fff0014        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x3fff0014        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  *(.gnu.linkonce.b.*)
  *(COMMON)
                 0x3fff0018                . = ALIGN (0x8)
@@ -332,7 +332,7 @@ END GROUP
  *(.data)
  *(.data.*)
  .data.current_read_mapping
-                0x3fff0018        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x3fff0018        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  *(.gnu.linkonce.d.*)
  *(.data1)
  *(.sdata)
@@ -347,54 +347,54 @@ END GROUP
 .dram0.rodata   0x3fff001c     0x1234
                 0x3fff001c                _rodata_start = ABSOLUTE (.)
  *(.rodata)
- .rodata        0x3fff001c       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .rodata        0x3fff0030        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .rodata        0x3fff001c       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .rodata        0x3fff0030        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
  *(.rodata.*)
  .rodata.str1.4
-                0x3fff0038       0x3b C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                0x3fff0038       0x3b C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
  *fill*         0x3fff0073        0x1 
  .rodata.str1.4
-                0x3fff0074      0x321 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x3fff0074      0x321 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                 0x329 (size before relaxing)
  *fill*         0x3fff0395        0x3 
  .rodata.str1.4
-                0x3fff0398      0x276 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x3fff0398      0x276 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                 0x27e (size before relaxing)
  *fill*         0x3fff060e        0x2 
  .rodata.__func__$3801
-                0x3fff0610       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x3fff0610       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  .rodata.str1.4
-                0x3fff0620      0x28e C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x3fff0620      0x28e C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  *fill*         0x3fff08ae        0x2 
  .rodata.str1.4
-                0x3fff08b0      0x3fa C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x3fff08b0      0x3fa C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                 0x436 (size before relaxing)
  *fill*         0x3fff0caa        0x2 
  .rodata.str1.4
-                0x3fff0cac      0x163 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+                0x3fff0cac      0x163 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
  *fill*         0x3fff0e0f        0x1 
  .rodata.str1.4
-                0x3fff0e10       0xcc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x3fff0e10       0xcc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
  .rodata.padding$2493
-                0x3fff0edc       0x40 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x3fff0edc       0x40 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
  .rodata.__func__$2489
-                0x3fff0f1c       0x19 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x3fff0f1c       0x19 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
  *fill*         0x3fff0f35        0x3 
  .rodata.__func__$2469
-                0x3fff0f38       0x17 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x3fff0f38       0x17 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
  *fill*         0x3fff0f4f        0x1 
  .rodata.str1.4
-                0x3fff0f50      0x258 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x3fff0f50      0x258 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                 0x255 (size before relaxing)
  .rodata.rtc_clk_xtal_freq_estimate
-                0x3fff11a8       0x64 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x3fff11a8       0x64 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .rodata.rtc_clk_cpu_freq_value
-                0x3fff120c       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x3fff120c       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .rodata.__func__$2697
-                0x3fff1220       0x17 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x3fff1220       0x17 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  *fill*         0x3fff1237        0x1 
  .rodata.__func__$2682
-                0x3fff1238       0x15 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x3fff1238       0x15 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  *(.gnu.linkonce.r.*)
  *(.rodata1)
                 0x3fff124d                __XT_EXCEPTION_TABLE_ = ABSOLUTE (.)
@@ -436,550 +436,550 @@ END GROUP
                 0x40078000                _text_start = ABSOLUTE (.)
  *(.literal .text .literal.* .text.* .stub .gnu.warning .gnu.linkonce.literal.* .gnu.linkonce.t.*.literal .gnu.linkonce.t.*)
  .literal.selected_boot_partition
-                0x40078000        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                0x40078000        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
                                   0x4 (size before relaxing)
  .literal.select_image
-                0x40078000       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                0x40078000       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
                                  0x20 (size before relaxing)
  .literal.call_start_cpu0
-                0x40078010        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                0x40078010        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
                                   0xc (size before relaxing)
  .literal.log_invalid_app_partition
-                0x40078010       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078010       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x2c (size before relaxing)
  .literal.try_load_partition
-                0x40078024        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078024        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                   0x4 (size before relaxing)
  .literal.set_cache_and_start_app
-                0x40078024       0x24 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078024       0x24 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x30 (size before relaxing)
  .literal.unpack_load_app
-                0x40078048       0x1c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078048       0x1c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x34 (size before relaxing)
  .literal.bootloader_utility_load_partition_table
-                0x40078064       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078064       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x30 (size before relaxing)
  .literal.bootloader_utility_get_selected_boot_partition
-                0x40078074       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078074       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x58 (size before relaxing)
  .literal.bootloader_utility_load_boot_image
-                0x40078088        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078088        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x3c (size before relaxing)
  .literal.bootloader_utility_load_image
-                0x40078090        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078090        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                   0x8 (size before relaxing)
  .literal.print_flash_info
-                0x40078090        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078090        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  .literal.wdt_reset_cpu0_info_enable
-                0x40078094        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078094        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  .literal.wdt_reset_info_dump
-                0x40078098       0x5c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078098       0x5c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x6c (size before relaxing)
  .literal.vddsdio_configure
-                0x400780f4        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x400780f4        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                   0xc (size before relaxing)
  .literal.uart_console_configure
-                0x400780f8       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x400780f8       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x18 (size before relaxing)
  .literal.wdt_reset_check
-                0x4007810c        0xc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x4007810c        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x30 (size before relaxing)
  .literal.update_flash_config
-                0x40078118       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078118       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x20 (size before relaxing)
  .literal.bootloader_main
-                0x40078128       0x1c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078128       0x1c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x5c (size before relaxing)
  .literal.__assert_func
-                0x40078144        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078144        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x10 (size before relaxing)
  .literal.bootloader_init
-                0x40078148       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078148       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x74 (size before relaxing)
  .literal.spi_to_esp_err
-                0x40078184        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x40078184        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  .literal.bootloader_flash_read_allow_decrypt
-                0x4007818c       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x4007818c       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                                  0x30 (size before relaxing)
  .literal.bootloader_flash_read_no_decrypt
-                0x4007819c        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x4007819c        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                                  0x14 (size before relaxing)
  .literal.bootloader_mmap
-                0x4007819c       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x4007819c       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                                  0x50 (size before relaxing)
  .literal.bootloader_munmap
-                0x400781b0        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x400781b0        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                                  0x14 (size before relaxing)
  .literal.bootloader_flash_read
-                0x400781b0        0xc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x400781b0        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                                  0x30 (size before relaxing)
  .literal.bootloader_fill_random
-                0x400781bc        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                0x400781bc        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
  .literal.bootloader_random_enable
-                0x400781c4       0x70 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                0x400781c4       0x70 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
                                  0x78 (size before relaxing)
  .literal.bootloader_random_disable
-                0x40078234       0x1c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                0x40078234       0x1c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
                                  0x4c (size before relaxing)
  .literal.should_map
-                0x40078250        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40078250        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x10 (size before relaxing)
  .literal.verify_image_header
-                0x40078250       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40078250       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x2c (size before relaxing)
  .literal.verify_segment_header
-                0x40078264        0xc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40078264        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x28 (size before relaxing)
  .literal.verify_checksum
-                0x40078270        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40078270        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x1c (size before relaxing)
  .literal.process_segment_data
-                0x40078274        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40078274        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x24 (size before relaxing)
  .literal.verify_simple_hash
-                0x4007827c        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x4007827c        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x2c (size before relaxing)
  .literal.should_load
-                0x40078284        0xc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40078284        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x18 (size before relaxing)
  .literal.process_segment
-                0x40078290        0xc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40078290        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x44 (size before relaxing)
  .literal.esp_image_load
-                0x4007829c       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x4007829c       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x7c (size before relaxing)
  .literal.esp_partition_table_basic_verify
-                0x400782b0       0x2c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+                0x400782b0       0x2c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
                                  0x5c (size before relaxing)
  .literal.bootloader_clock_configure
-                0x400782dc        0xc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+                0x400782dc        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
                                  0x20 (size before relaxing)
  .literal.bootloader_common_ota_select_crc
-                0x400782e8        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+                0x400782e8        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
  .literal.bootloader_common_ota_select_valid
-                0x400782ec        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+                0x400782ec        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
                                   0x4 (size before relaxing)
  .literal.bootloader_sha256_start
-                0x400782ec        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x400782ec        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
  .literal.bootloader_sha256_data
-                0x400782f4       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x400782f4       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
                                  0x30 (size before relaxing)
  .literal.bootloader_sha256_finish
-                0x40078314       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x40078314       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
                                  0x4c (size before relaxing)
  .literal.esp_log_early_timestamp
-                0x4007832c        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x4007832c        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .literal.esp_rom_spiflash_read_status
-                0x40078334       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40078334       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                  0x14 (size before relaxing)
  .literal.esp_rom_spiflash_wait_idle
-                0x40078344        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40078344        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                   0xc (size before relaxing)
  .literal.esp_rom_spiflash_read_data
-                0x4007834c       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x4007834c       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                  0x18 (size before relaxing)
  .literal.esp_rom_spiflash_read_statushigh
-                0x4007835c        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x4007835c        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                   0xc (size before relaxing)
  .literal.esp_rom_spiflash_write_status
-                0x40078360        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40078360        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                  0x14 (size before relaxing)
  .literal.esp_rom_spiflash_unlock
-                0x40078360        0xc C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40078360        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                  0x28 (size before relaxing)
  .literal.esp_rom_spiflash_read
-                0x4007836c       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x4007836c       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                  0x5c (size before relaxing)
  .literal.rtc_clk_32k_enable_internal
-                0x400783a8       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783a8       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x14 (size before relaxing)
  .literal.rtc_clk_32k_enable
-                0x400783b8        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783b8        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0xc (size before relaxing)
  .literal.rtc_clk_8m_enable
-                0x400783bc        0xc C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783bc        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x10 (size before relaxing)
  .literal.rtc_clk_8m_enabled
-                0x400783c8        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783c8        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0x4 (size before relaxing)
  .literal.rtc_clk_8md256_enabled
-                0x400783c8        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783c8        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0x4 (size before relaxing)
  .literal.rtc_clk_xtal_freq_estimate
-                0x400783c8       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783c8       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x4c (size before relaxing)
  .literal.rtc_clk_slow_freq_set
-                0x400783e8        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783e8        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0xc (size before relaxing)
  .literal.rtc_clk_slow_freq_get
-                0x400783e8        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783e8        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0x4 (size before relaxing)
  .literal.rtc_clk_fast_freq_set
-                0x400783e8        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783e8        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0xc (size before relaxing)
  .literal.rtc_clk_fast_freq_get
-                0x400783e8        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783e8        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0x4 (size before relaxing)
  .literal.rtc_clk_bbpll_set
-                0x400783e8       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783e8       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x38 (size before relaxing)
  .literal.rtc_clk_xtal_freq_get
-                0x400783f8        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x400783f8        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x1c (size before relaxing)
  .literal.rtc_clk_cpu_freq_get
-                0x40078400       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x40078400       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x28 (size before relaxing)
  .literal.rtc_clk_cpu_freq_value
-                0x40078414       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x40078414       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x2c (size before relaxing)
  .literal.rtc_clk_xtal_freq_update
-                0x40078434        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x40078434        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0x8 (size before relaxing)
  .literal.rtc_clk_apb_freq_update
-                0x40078434        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x40078434        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                   0x8 (size before relaxing)
  .literal.rtc_clk_cpu_freq_set
-                0x40078438       0x1c C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x40078438       0x1c C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x78 (size before relaxing)
  .literal.rtc_clk_apb_freq_get
-                0x40078454        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x40078454        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x14 (size before relaxing)
  .literal.rtc_clk_init
-                0x4007845c       0x24 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007845c       0x24 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x94 (size before relaxing)
  .literal.rtc_clk_cal_internal
-                0x40078480       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x40078480       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
                                  0x3c (size before relaxing)
  .literal.rtc_clk_cal_ratio
-                0x400784a0        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x400784a0        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
                                   0x8 (size before relaxing)
  .literal.rtc_clk_wait_for_slow_cycle
-                0x400784a0        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x400784a0        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
                                  0x20 (size before relaxing)
  .literal.rtc_vddsdio_get_config
-                0x400784a8       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+                0x400784a8       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
                                  0x30 (size before relaxing)
  .literal.rtc_vddsdio_set_config
-                0x400784c8        0x4 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+                0x400784c8        0x4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
                                   0x8 (size before relaxing)
  .literal       0x400784cc        0x8 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .iram1.literal
-                0x400784d4       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x400784d4       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x60 (size before relaxing)
  .iram1.literal
-                0x40078504       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+                0x40078504       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
                                  0x30 (size before relaxing)
  .text.selected_boot_partition
-                0x40078518        0xc C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                0x40078518        0xc C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
                                  0x10 (size before relaxing)
  .text.select_image
-                0x40078524       0x52 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                0x40078524       0x52 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
                                  0x5a (size before relaxing)
  *fill*         0x40078576        0x2 
  .text.call_start_cpu0
-                0x40078578       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                0x40078578       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
                                  0x20 (size before relaxing)
                 0x40078578                call_start_cpu0
  .text.log_invalid_app_partition
-                0x40078590       0x57 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078590       0x57 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x5b (size before relaxing)
  *fill*         0x400785e7        0x1 
  .text.try_load_partition
-                0x400785e8       0x1e C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x400785e8       0x1e C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x22 (size before relaxing)
  *fill*         0x40078606        0x2 
  .text.set_cache_and_start_app
-                0x40078608       0xcf C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078608       0xcf C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
  *fill*         0x400786d7        0x1 
  .text.unpack_load_app
-                0x400786d8       0xb2 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x400786d8       0xb2 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0xb6 (size before relaxing)
  *fill*         0x4007878a        0x2 
  .text.bootloader_utility_load_partition_table
-                0x4007878c       0xcd C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x4007878c       0xcd C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0xd5 (size before relaxing)
                 0x4007878c                bootloader_utility_load_partition_table
  *fill*         0x40078859        0x3 
  .text.bootloader_utility_get_selected_boot_partition
-                0x4007885c      0x11c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x4007885c      0x11c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                 0x124 (size before relaxing)
                 0x4007885c                bootloader_utility_get_selected_boot_partition
  .text.bootloader_utility_load_boot_image
-                0x40078978       0xa6 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078978       0xa6 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0xba (size before relaxing)
                 0x40078978                bootloader_utility_load_boot_image
  *fill*         0x40078a1e        0x2 
  .text.bootloader_utility_load_image
-                0x40078a20        0xf C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x40078a20        0xf C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
                                  0x13 (size before relaxing)
                 0x40078a20                bootloader_utility_load_image
  *fill*         0x40078a2f        0x1 
  .text.print_flash_info
-                0x40078a30        0xd C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078a30        0xd C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  *fill*         0x40078a3d        0x3 
  .text.wdt_reset_cpu0_info_enable
-                0x40078a40       0x27 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078a40       0x27 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  *fill*         0x40078a67        0x1 
  .text.wdt_reset_info_dump
-                0x40078a68       0xe6 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078a68       0xe6 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  *fill*         0x40078b4e        0x2 
  .text.vddsdio_configure
-                0x40078b50       0x33 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078b50       0x33 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x37 (size before relaxing)
  *fill*         0x40078b83        0x1 
  .text.uart_console_configure
-                0x40078b84       0x36 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078b84       0x36 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x3a (size before relaxing)
  *fill*         0x40078bba        0x2 
  .text.wdt_reset_check
-                0x40078bbc       0xa2 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078bbc       0xa2 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0xae (size before relaxing)
  *fill*         0x40078c5e        0x2 
  .text.update_flash_config
-                0x40078c60       0x68 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078c60       0x68 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  .text.bootloader_main
-                0x40078cc8       0xa8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078cc8       0xa8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0xc8 (size before relaxing)
  .text.__assert_func
-                0x40078d70       0x1f C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078d70       0x1f C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                  0x23 (size before relaxing)
                 0x40078d70                __assert_func
  *fill*         0x40078d8f        0x1 
  .text.bootloader_init
-                0x40078d90      0x12a C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x40078d90      0x12a C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
                                 0x136 (size before relaxing)
                 0x40078d90                bootloader_init
  *fill*         0x40078eba        0x2 
  .text.spi_to_esp_err
-                0x40078ebc       0x22 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x40078ebc       0x22 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  *fill*         0x40078ede        0x2 
  .text.bootloader_flash_read_allow_decrypt
-                0x40078ee0       0x97 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x40078ee0       0x97 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                                  0x9b (size before relaxing)
  *fill*         0x40078f77        0x1 
  .text.bootloader_flash_read_no_decrypt
-                0x40078f78       0x32 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x40078f78       0x32 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                                  0x36 (size before relaxing)
  *fill*         0x40078faa        0x2 
  .text.bootloader_mmap
-                0x40078fac       0xb1 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x40078fac       0xb1 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                                  0xb9 (size before relaxing)
                 0x40078fac                bootloader_mmap
  *fill*         0x4007905d        0x3 
  .text.bootloader_munmap
-                0x40079060       0x36 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x40079060       0x36 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                 0x40079060                bootloader_munmap
  *fill*         0x40079096        0x2 
  .text.bootloader_flash_read
-                0x40079098       0x86 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x40079098       0x86 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
                 0x40079098                bootloader_flash_read
  *fill*         0x4007911e        0x2 
  .text.bootloader_fill_random
-                0x40079120       0x59 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                0x40079120       0x59 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
                 0x40079120                bootloader_fill_random
  *fill*         0x40079179        0x3 
  .text.bootloader_random_enable
-                0x4007917c      0x1d5 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                0x4007917c      0x1d5 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
                 0x4007917c                bootloader_random_enable
  *fill*         0x40079351        0x3 
  .text.bootloader_random_disable
-                0x40079354      0x11c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                0x40079354      0x11c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
                 0x40079354                bootloader_random_disable
  .text.should_map
-                0x40079470       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40079470       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
  .text.verify_image_header
-                0x400794a0       0x7e C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x400794a0       0x7e C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
  *fill*         0x4007951e        0x2 
  .text.verify_segment_header
-                0x40079520       0x71 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40079520       0x71 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x79 (size before relaxing)
  *fill*         0x40079591        0x3 
  .text.verify_checksum
-                0x40079594       0x87 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40079594       0x87 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x8f (size before relaxing)
  *fill*         0x4007961b        0x1 
  .text.process_segment_data
-                0x4007961c       0xa4 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x4007961c       0xa4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0xb0 (size before relaxing)
  .text.verify_simple_hash
-                0x400796c0       0x5b C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x400796c0       0x5b C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x6a (size before relaxing)
  *fill*         0x4007971b        0x1 
  .text.should_load
-                0x4007971c       0x44 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x4007971c       0x44 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0x48 (size before relaxing)
  .text.process_segment
-                0x40079760       0xee C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40079760       0xee C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                  0xf6 (size before relaxing)
  *fill*         0x4007984e        0x2 
  .text.esp_image_load
-                0x40079850      0x255 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x40079850      0x255 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
                                 0x271 (size before relaxing)
                 0x40079850                esp_image_load
  *fill*         0x40079aa5        0x3 
  .text.esp_partition_table_basic_verify
-                0x40079aa8      0x143 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+                0x40079aa8      0x143 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
                                 0x14f (size before relaxing)
                 0x40079aa8                esp_partition_table_basic_verify
  *fill*         0x40079beb        0x1 
  .text.bootloader_clock_configure
-                0x40079bec       0x76 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+                0x40079bec       0x76 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
                                  0x82 (size before relaxing)
                 0x40079bec                bootloader_clock_configure
  *fill*         0x40079c62        0x2 
  .text.bootloader_common_ota_select_crc
-                0x40079c64       0x14 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+                0x40079c64       0x14 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
                 0x40079c64                bootloader_common_ota_select_crc
  .text.bootloader_common_ota_select_valid
-                0x40079c78       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+                0x40079c78       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
                                  0x24 (size before relaxing)
                 0x40079c78                bootloader_common_ota_select_valid
  .text.bootloader_sha256_start
-                0x40079c98       0x12 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x40079c98       0x12 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
                 0x40079c98                bootloader_sha256_start
  *fill*         0x40079caa        0x2 
  .text.bootloader_sha256_data
-                0x40079cac       0xa1 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x40079cac       0xa1 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
                                  0xa9 (size before relaxing)
                 0x40079cac                bootloader_sha256_data
  *fill*         0x40079d4d        0x3 
  .text.bootloader_sha256_finish
-                0x40079d50       0xdc C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x40079d50       0xdc C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
                                  0xf0 (size before relaxing)
                 0x40079d50                bootloader_sha256_finish
  .text.esp_log_early_timestamp
-                0x40079e2c       0x1f C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x40079e2c       0x1f C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
                 0x40079e2c                esp_log_early_timestamp
                 0x40079e2c                esp_log_timestamp
  *fill*         0x40079e4b        0x1 
  .text.esp_rom_spiflash_read_status
-                0x40079e4c       0x61 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40079e4c       0x61 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                 0x40079e4c                esp_rom_spiflash_read_status
  *fill*         0x40079ead        0x3 
  .text.esp_rom_spiflash_wait_idle
-                0x40079eb0       0x32 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40079eb0       0x32 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                 0x40079eb0                esp_rom_spiflash_wait_idle
  *fill*         0x40079ee2        0x2 
  .text.esp_rom_spiflash_read_data
-                0x40079ee4       0xe2 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40079ee4       0xe2 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  *fill*         0x40079fc6        0x2 
  .text.esp_rom_spiflash_read_statushigh
-                0x40079fc8       0x21 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40079fc8       0x21 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                 0x40079fc8                esp_rom_spiflash_read_statushigh
  *fill*         0x40079fe9        0x3 
  .text.esp_rom_spiflash_write_status
-                0x40079fec       0x34 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x40079fec       0x34 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                  0x38 (size before relaxing)
                 0x40079fec                esp_rom_spiflash_write_status
  .text.esp_rom_spiflash_unlock
-                0x4007a020       0x6a C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x4007a020       0x6a C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                  0x7e (size before relaxing)
                 0x4007a020                esp_rom_spiflash_unlock
  *fill*         0x4007a08a        0x2 
  .text.esp_rom_spiflash_read
-                0x4007a08c      0x284 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x4007a08c      0x284 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                 0x4007a08c                esp_rom_spiflash_read
  .text.rtc_clk_32k_enable_internal
-                0x4007a310       0x81 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a310       0x81 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  *fill*         0x4007a391        0x3 
  .text.rtc_clk_32k_enable
-                0x4007a394       0x2d C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a394       0x2d C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007a394                rtc_clk_32k_enable
  *fill*         0x4007a3c1        0x3 
  .text.rtc_clk_8m_enable
-                0x4007a3c4       0x9d C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a3c4       0x9d C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007a3c4                rtc_clk_8m_enable
  *fill*         0x4007a461        0x3 
  .text.rtc_clk_8m_enabled
-                0x4007a464       0x19 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a464       0x19 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007a464                rtc_clk_8m_enabled
  *fill*         0x4007a47d        0x3 
  .text.rtc_clk_8md256_enabled
-                0x4007a480       0x1a C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a480       0x1a C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007a480                rtc_clk_8md256_enabled
  *fill*         0x4007a49a        0x2 
  .text.rtc_clk_xtal_freq_estimate
-                0x4007a49c       0xa6 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a49c       0xa6 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0xb2 (size before relaxing)
  *fill*         0x4007a542        0x2 
  .text.rtc_clk_slow_freq_set
-                0x4007a544       0x27 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a544       0x27 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007a544                rtc_clk_slow_freq_set
  *fill*         0x4007a56b        0x1 
  .text.rtc_clk_slow_freq_get
-                0x4007a56c       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a56c       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007a56c                rtc_clk_slow_freq_get
  .text.rtc_clk_fast_freq_set
-                0x4007a57c       0x2a C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a57c       0x2a C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007a57c                rtc_clk_fast_freq_set
  *fill*         0x4007a5a6        0x2 
  .text.rtc_clk_fast_freq_get
-                0x4007a5a8       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a5a8       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007a5a8                rtc_clk_fast_freq_get
  .text.rtc_clk_bbpll_set
-                0x4007a5b8      0x170 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a5b8      0x170 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                 0x178 (size before relaxing)
                 0x4007a5b8                rtc_clk_bbpll_set
  .text.rtc_clk_xtal_freq_get
-                0x4007a728       0x38 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a728       0x38 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x3c (size before relaxing)
                 0x4007a728                rtc_clk_xtal_freq_get
                 0x4007a728                rtc_get_xtal
  .text.rtc_clk_cpu_freq_get
-                0x4007a760       0x88 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a760       0x88 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x94 (size before relaxing)
                 0x4007a760                rtc_clk_cpu_freq_get
  .text.rtc_clk_cpu_freq_value
-                0x4007a7e8       0x44 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a7e8       0x44 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x48 (size before relaxing)
                 0x4007a7e8                rtc_clk_cpu_freq_value
  .text.rtc_clk_xtal_freq_update
-                0x4007a82c       0x12 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a82c       0x12 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x16 (size before relaxing)
                 0x4007a82c                rtc_clk_xtal_freq_update
  *fill*         0x4007a83e        0x2 
  .text.rtc_clk_apb_freq_update
-                0x4007a840       0x13 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a840       0x13 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                  0x16 (size before relaxing)
                 0x4007a840                rtc_clk_apb_freq_update
  *fill*         0x4007a853        0x1 
  .text.rtc_clk_cpu_freq_set
-                0x4007a854      0x1bc C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007a854      0x1bc C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                 0x1d0 (size before relaxing)
                 0x4007a854                rtc_clk_cpu_freq_set
  .text.rtc_clk_apb_freq_get
-                0x4007aa10       0x2a C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007aa10       0x2a C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                 0x4007aa10                rtc_clk_apb_freq_get
  *fill*         0x4007aa3a        0x2 
  .text.rtc_clk_init
-                0x4007aa3c      0x182 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007aa3c      0x182 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
                                 0x1ba (size before relaxing)
                 0x4007aa3c                rtc_clk_init
  *fill*         0x4007abbe        0x2 
  .text.rtc_clk_cal_internal
-                0x4007abc0      0x161 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x4007abc0      0x161 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  *fill*         0x4007ad21        0x3 
  .text.rtc_clk_cal_ratio
-                0x4007ad24       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x4007ad24       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
                                  0x24 (size before relaxing)
                 0x4007ad24                rtc_clk_cal_ratio
  .text.rtc_clk_wait_for_slow_cycle
-                0x4007ad44       0x79 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x4007ad44       0x79 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
                 0x4007ad44                rtc_clk_wait_for_slow_cycle
  *fill*         0x4007adbd        0x3 
  .text.rtc_vddsdio_get_config
-                0x4007adc0      0x113 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+                0x4007adc0      0x113 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
                 0x4007adc0                rtc_vddsdio_get_config
  *fill*         0x4007aed3        0x1 
  .text.rtc_vddsdio_set_config
-                0x4007aed4       0x46 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+                0x4007aed4       0x46 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
                 0x4007aed4                rtc_vddsdio_set_config
  *fill*         0x4007af1a        0x2 
  .text          0x4007af1c       0x26 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
                 0x4007af1c                __bswapsi2
  *fill*         0x4007af42        0x2 
  .text.index_to_partition
-                0x4007af44       0x48 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x4007af44       0x48 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
  *fill*         0x4007af8c        0x0 
  *fill*         0x4007af8c        0x0 
  *fill*         0x4007af8c        0x0 
@@ -1021,11 +1021,11 @@ END GROUP
  *fill*         0x4007af8c        0x0 
  *fill*         0x4007af8c        0x0 
  .text.clk_val_is_valid
-                0x4007af8c       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007af8c       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.reg_val_to_clk_val
-                0x4007afac        0x8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007afac        0x8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .text.clk_val_to_reg_val
-                0x4007afb4        0xe C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x4007afb4        0xe C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  *fill*         0x4007afc2        0x0 
  *fill*         0x4007afc2        0x0 
  *fill*         0x4007afc2        0x0 
@@ -1047,9 +1047,9 @@ END GROUP
                 0x4007afc4                __udivdi3
  *(.iram1 .iram1.*)
  *fill*         0x4007b245        0x3 
- .iram1         0x4007b248      0x1df C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .iram1         0x4007b248      0x1df C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  *fill*         0x4007b427        0x1 
- .iram1         0x4007b428      0x11a C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .iram1         0x4007b428      0x11a C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
                 0x4007b428                esp_cpu_stall
                 0x4007b4bc                esp_cpu_unstall
                 0x4007b510                esp_cpu_reset
@@ -2886,240 +2886,240 @@ END GROUP
                 [!provide]                PROVIDE (I2S1, 0x3ff6d000)
                 [!provide]                PROVIDE (UART2, 0x3ff6e000)
                 0x40008550                PROVIDE (ets_update_cpu_frequency, 0x40008550)
-OUTPUT(C:/msys32/home/esp/soft-ap/build/bootloader/bootloader.elf elf32-xtensa-le)
+OUTPUT(C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader.elf elf32-xtensa-le)
 
 .debug_frame    0x00000000      0xc90
- .debug_frame   0x00000000       0x58 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .debug_frame   0x00000058       0xe8 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .debug_frame   0x00000140      0x118 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .debug_frame   0x00000258       0xd0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .debug_frame   0x00000328       0x58 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .debug_frame   0x00000380      0x100 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .debug_frame   0x00000480       0x28 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .debug_frame   0x000004a8       0x28 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .debug_frame   0x000004d0       0x40 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .debug_frame   0x00000510       0x58 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .debug_frame   0x00000568       0x70 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .debug_frame   0x000005d8      0x208 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .debug_frame   0x000007e0      0x2e0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .debug_frame   0x00000ac0       0xb8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .debug_frame   0x00000b78       0x58 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .debug_frame   0x00000bd0       0x70 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .debug_frame   0x00000000       0x58 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .debug_frame   0x00000058       0xe8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .debug_frame   0x00000140      0x118 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .debug_frame   0x00000258       0xd0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .debug_frame   0x00000328       0x58 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .debug_frame   0x00000380      0x100 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .debug_frame   0x00000480       0x28 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .debug_frame   0x000004a8       0x28 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .debug_frame   0x000004d0       0x40 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .debug_frame   0x00000510       0x58 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .debug_frame   0x00000568       0x70 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .debug_frame   0x000005d8      0x208 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_frame   0x000007e0      0x2e0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .debug_frame   0x00000ac0       0xb8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .debug_frame   0x00000b78       0x58 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .debug_frame   0x00000bd0       0x70 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .debug_frame   0x00000c40       0x28 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .debug_frame   0x00000c68       0x28 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
 
 .debug_info     0x00000000     0x935b
- .debug_info    0x00000000      0x50d C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .debug_info    0x0000050d     0x12b2 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .debug_info    0x000017bf     0x15b2 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .debug_info    0x00002d71      0xbfa C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .debug_info    0x0000396b      0x258 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .debug_info    0x00003bc3     0x121e C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .debug_info    0x00004de1      0x526 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .debug_info    0x00005307      0x269 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .debug_info    0x00005570      0x16b C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .debug_info    0x000056db      0x44d C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .debug_info    0x00005b28      0x900 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .debug_info    0x00006428      0xaf5 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .debug_info    0x00006f1d     0x151e C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .debug_info    0x0000843b      0x39b C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .debug_info    0x000087d6      0x3d8 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .debug_info    0x00008bae      0x118 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .debug_info    0x00000000      0x50d C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .debug_info    0x0000050d     0x12b2 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .debug_info    0x000017bf     0x15b2 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .debug_info    0x00002d71      0xbfa C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .debug_info    0x0000396b      0x258 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .debug_info    0x00003bc3     0x121e C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .debug_info    0x00004de1      0x526 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .debug_info    0x00005307      0x269 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .debug_info    0x00005570      0x16b C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .debug_info    0x000056db      0x44d C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .debug_info    0x00005b28      0x900 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .debug_info    0x00006428      0xaf5 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_info    0x00006f1d     0x151e C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .debug_info    0x0000843b      0x39b C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .debug_info    0x000087d6      0x3d8 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .debug_info    0x00008bae      0x118 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .debug_info    0x00008cc6       0xcd c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .debug_info    0x00008d93      0x5c8 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
 
 .debug_abbrev   0x00000000     0x2107
- .debug_abbrev  0x00000000      0x18c C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .debug_abbrev  0x0000018c      0x3ae C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .debug_abbrev  0x0000053a      0x41d C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .debug_abbrev  0x00000957      0x22f C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .debug_abbrev  0x00000b86      0x126 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .debug_abbrev  0x00000cac      0x2b1 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .debug_abbrev  0x00000f5d      0x17b C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .debug_abbrev  0x000010d8      0x108 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .debug_abbrev  0x000011e0       0xd5 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .debug_abbrev  0x000012b5      0x17d C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .debug_abbrev  0x00001432      0x1f3 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .debug_abbrev  0x00001625      0x22e C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .debug_abbrev  0x00001853      0x388 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .debug_abbrev  0x00001bdb      0x17a C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .debug_abbrev  0x00001d55      0x15d C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .debug_abbrev  0x00001eb2       0x96 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .debug_abbrev  0x00000000      0x18c C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .debug_abbrev  0x0000018c      0x3ae C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .debug_abbrev  0x0000053a      0x41d C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .debug_abbrev  0x00000957      0x22f C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .debug_abbrev  0x00000b86      0x126 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .debug_abbrev  0x00000cac      0x2b1 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .debug_abbrev  0x00000f5d      0x17b C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .debug_abbrev  0x000010d8      0x108 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .debug_abbrev  0x000011e0       0xd5 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .debug_abbrev  0x000012b5      0x17d C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .debug_abbrev  0x00001432      0x1f3 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .debug_abbrev  0x00001625      0x22e C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_abbrev  0x00001853      0x388 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .debug_abbrev  0x00001bdb      0x17a C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .debug_abbrev  0x00001d55      0x15d C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .debug_abbrev  0x00001eb2       0x96 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .debug_abbrev  0x00001f48       0x60 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .debug_abbrev  0x00001fa8      0x15f c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
 
 .debug_loc      0x00000000     0x4c33
- .debug_loc     0x00000000       0xb6 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .debug_loc     0x000000b6      0x8b1 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .debug_loc     0x00000967      0x625 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .debug_loc     0x00000f8c      0x638 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .debug_loc     0x000015c4       0x91 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .debug_loc     0x00001655      0xa54 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .debug_loc     0x000020a9      0x1b6 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .debug_loc     0x0000225f       0x3d C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .debug_loc     0x0000229c       0x74 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .debug_loc     0x00002310      0x135 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .debug_loc     0x00002445      0x4ad C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .debug_loc     0x000028f2      0xa20 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .debug_loc     0x00003312      0xa5e C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .debug_loc     0x00003d70      0x1ca C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .debug_loc     0x00003f3a      0x2dd C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .debug_loc     0x00004217       0x13 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .debug_loc     0x00000000       0xb6 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .debug_loc     0x000000b6      0x8b1 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .debug_loc     0x00000967      0x625 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .debug_loc     0x00000f8c      0x638 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .debug_loc     0x000015c4       0x91 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .debug_loc     0x00001655      0xa54 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .debug_loc     0x000020a9      0x1b6 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .debug_loc     0x0000225f       0x3d C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .debug_loc     0x0000229c       0x74 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .debug_loc     0x00002310      0x135 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .debug_loc     0x00002445      0x4ad C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .debug_loc     0x000028f2      0xa20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_loc     0x00003312      0xa5e C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .debug_loc     0x00003d70      0x1ca C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .debug_loc     0x00003f3a      0x2dd C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .debug_loc     0x00004217       0x13 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .debug_loc     0x0000422a       0x21 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .debug_loc     0x0000424b      0x9e8 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
 
 .debug_aranges  0x00000000      0x580
  .debug_aranges
-                0x00000000       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                0x00000000       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
  .debug_aranges
-                0x00000030       0x60 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                0x00000030       0x60 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
  .debug_aranges
-                0x00000090       0x70 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                0x00000090       0x70 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
  .debug_aranges
-                0x00000100       0x58 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                0x00000100       0x58 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
  .debug_aranges
-                0x00000158       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                0x00000158       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
  .debug_aranges
-                0x00000188       0x68 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                0x00000188       0x68 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
  .debug_aranges
-                0x000001f0       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+                0x000001f0       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
  .debug_aranges
-                0x00000210       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+                0x00000210       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
  .debug_aranges
-                0x00000230       0x28 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+                0x00000230       0x28 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
  .debug_aranges
-                0x00000258       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+                0x00000258       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
  .debug_aranges
-                0x00000288       0x38 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
+                0x00000288       0x38 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
  .debug_aranges
-                0x000002c0       0xc0 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+                0x000002c0       0xc0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
  .debug_aranges
-                0x00000380      0x108 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                0x00000380      0x108 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
  .debug_aranges
-                0x00000488       0x50 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+                0x00000488       0x50 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
  .debug_aranges
-                0x000004d8       0x30 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+                0x000004d8       0x30 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
  .debug_aranges
-                0x00000508       0x38 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+                0x00000508       0x38 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .debug_aranges
                 0x00000540       0x20 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .debug_aranges
                 0x00000560       0x20 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
 
 .debug_ranges   0x00000000      0x560
- .debug_ranges  0x00000000       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .debug_ranges  0x00000020       0x80 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .debug_ranges  0x000000a0       0x60 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .debug_ranges  0x00000100       0x48 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .debug_ranges  0x00000148       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .debug_ranges  0x00000168       0x70 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .debug_ranges  0x000001d8       0x58 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .debug_ranges  0x00000230       0x10 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .debug_ranges  0x00000240       0x18 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .debug_ranges  0x00000258       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .debug_ranges  0x00000278       0x28 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .debug_ranges  0x000002a0       0xb0 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .debug_ranges  0x00000350      0x128 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .debug_ranges  0x00000478       0x40 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .debug_ranges  0x000004b8       0x20 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .debug_ranges  0x000004d8       0x28 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .debug_ranges  0x00000000       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .debug_ranges  0x00000020       0x80 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .debug_ranges  0x000000a0       0x60 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .debug_ranges  0x00000100       0x48 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .debug_ranges  0x00000148       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .debug_ranges  0x00000168       0x70 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .debug_ranges  0x000001d8       0x58 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .debug_ranges  0x00000230       0x10 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .debug_ranges  0x00000240       0x18 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .debug_ranges  0x00000258       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .debug_ranges  0x00000278       0x28 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .debug_ranges  0x000002a0       0xb0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_ranges  0x00000350      0x128 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .debug_ranges  0x00000478       0x40 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .debug_ranges  0x000004b8       0x20 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .debug_ranges  0x000004d8       0x28 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .debug_ranges  0x00000500       0x60 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
 
 .debug_line     0x00000000     0x5850
- .debug_line    0x00000000      0x365 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .debug_line    0x00000365      0x82c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .debug_line    0x00000b91      0x80e C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .debug_line    0x0000139f      0x568 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .debug_line    0x00001907      0x37c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .debug_line    0x00001c83      0x9ff C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .debug_line    0x00002682      0x338 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .debug_line    0x000029ba      0x1e7 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .debug_line    0x00002ba1      0x1e2 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .debug_line    0x00002d83      0x3b6 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .debug_line    0x00003139      0x4d6 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .debug_line    0x0000360f      0xac4 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .debug_line    0x000040d3      0xc94 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .debug_line    0x00004d67      0x38f C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .debug_line    0x000050f6      0x3bc C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .debug_line    0x000054b2      0x187 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .debug_line    0x00000000      0x365 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .debug_line    0x00000365      0x82c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .debug_line    0x00000b91      0x80e C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .debug_line    0x0000139f      0x568 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .debug_line    0x00001907      0x37c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .debug_line    0x00001c83      0x9ff C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .debug_line    0x00002682      0x338 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .debug_line    0x000029ba      0x1e7 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .debug_line    0x00002ba1      0x1e2 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .debug_line    0x00002d83      0x3b6 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .debug_line    0x00003139      0x4d6 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .debug_line    0x0000360f      0xac4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_line    0x000040d3      0xc94 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .debug_line    0x00004d67      0x38f C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .debug_line    0x000050f6      0x3bc C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .debug_line    0x000054b2      0x187 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .debug_line    0x00005639       0x89 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .debug_line    0x000056c2      0x18e c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
 
-.debug_str      0x00000000     0x28fc
- .debug_str     0x00000000      0x471 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
-                                0x4fd (size before relaxing)
- .debug_str     0x00000471      0x4ac C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
-                                0x92d (size before relaxing)
- .debug_str     0x0000091d      0x5fd C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
-                                0xa82 (size before relaxing)
- .debug_str     0x00000f1a      0x22a C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
-                                0x572 (size before relaxing)
- .debug_str     0x00001144       0x89 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
-                                0x225 (size before relaxing)
- .debug_str     0x000011cd      0x30e C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
-                                0x9f4 (size before relaxing)
- .debug_str     0x000014db       0xb0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
-                                0x3c5 (size before relaxing)
- .debug_str     0x0000158b      0x235 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+.debug_str      0x00000000     0x290c
+ .debug_str     0x00000000      0x475 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+                                0x501 (size before relaxing)
+ .debug_str     0x00000475      0x4b0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+                                0x931 (size before relaxing)
+ .debug_str     0x00000925      0x5fd C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+                                0xa86 (size before relaxing)
+ .debug_str     0x00000f22      0x22a C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+                                0x576 (size before relaxing)
+ .debug_str     0x0000114c       0x89 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+                                0x229 (size before relaxing)
+ .debug_str     0x000011d5      0x30e C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+                                0x9f8 (size before relaxing)
+ .debug_str     0x000014e3       0xb0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+                                0x3c9 (size before relaxing)
+ .debug_str     0x00001593      0x235 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
                                 0x372 (size before relaxing)
- .debug_str     0x000017c0       0x7b C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .debug_str     0x000017c8       0x7b C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
                                 0x1d4 (size before relaxing)
- .debug_str     0x0000183b       0xf0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .debug_str     0x00001843       0xf0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
                                 0x2ba (size before relaxing)
- .debug_str     0x0000192b      0x1a0 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
-                                0x344 (size before relaxing)
- .debug_str     0x00001acb      0x483 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_str     0x00001933      0x1a4 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+                                0x348 (size before relaxing)
+ .debug_str     0x00001ad7      0x483 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
                                 0x74f (size before relaxing)
- .debug_str     0x00001f4e      0x54b C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
-                                0x959 (size before relaxing)
- .debug_str     0x00002499      0x12a C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .debug_str     0x00001f5a      0x54f C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+                                0x95d (size before relaxing)
+ .debug_str     0x000024a9      0x12a C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
                                 0x36c (size before relaxing)
- .debug_str     0x000025c3       0xb7 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .debug_str     0x000025d3       0xb7 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
                                 0x231 (size before relaxing)
- .debug_str     0x0000267a       0x6e C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .debug_str     0x0000268a       0x6e C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
                                 0x17a (size before relaxing)
- .debug_str     0x000026e8      0x138 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
+ .debug_str     0x000026f8      0x138 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
                                 0x1de (size before relaxing)
- .debug_str     0x00002820       0xdc c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
+ .debug_str     0x00002830       0xdc c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
                                 0x258 (size before relaxing)
 
 .comment        0x00000000       0x3b
- .comment       0x00000000       0x3b C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .comment       0x00000000       0x3b C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
                                  0x3c (size before relaxing)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .comment       0x0000003b       0x3c C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .comment       0x0000003b       0x3c C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .comment       0x0000003b       0x3c c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .comment       0x0000003b       0x3c c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)
 
 .xtensa.info    0x00000000       0x38
- .xtensa.info   0x00000000       0x38 C:/msys32/home/esp/soft-ap/build/bootloader/main\libmain.a(bootloader_start.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/log\liblog.a(log.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_time.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(rtc_init.o)
- .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/soft-ap/build/bootloader/soc\libsoc.a(cpu_util.o)
+ .xtensa.info   0x00000000       0x38 C:/msys32/home/esp/esp_soft_ap/build/bootloader/main\libmain.a(bootloader_start.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_utility.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_init.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_flash.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_random.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(esp_image_format.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(flash_partitions.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_clock.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_common.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/bootloader_support\libbootloader_support.a(bootloader_sha.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/log\liblog.a(log.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/spi_flash\libspi_flash.a(spi_flash_rom_patch.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_clk.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_time.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(rtc_init.o)
+ .xtensa.info   0x00000038        0x0 C:/msys32/home/esp/esp_soft_ap/build/bootloader/soc\libsoc.a(cpu_util.o)
  .xtensa.info   0x00000038        0x0 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_bswapsi2.o)
  .xtensa.info   0x00000038        0x0 c:/msys32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0\libgcc.a(_udivdi3.o)

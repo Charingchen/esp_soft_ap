@@ -22,7 +22,7 @@ src/bootloader_sha.o: \
  C:/msys32/home/esp/esp-idf/components/newlib/include/string.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/param.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/syslimits.h \
@@ -77,7 +77,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h:
 

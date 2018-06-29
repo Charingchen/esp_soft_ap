@@ -15,7 +15,7 @@ dport_panic_highint_hdl.o: \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_panic.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/soc.h
@@ -50,7 +50,7 @@ C:/msys32/home/esp/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h:
 
 C:/msys32/home/esp/esp-idf/components/esp32/include/esp_panic.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/soc.h:
 

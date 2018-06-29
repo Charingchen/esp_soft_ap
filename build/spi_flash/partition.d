@@ -16,7 +16,7 @@ partition.o: C:/msys32/home/esp/esp-idf/components/spi_flash/partition.c \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/alloca.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/string.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h \
@@ -77,7 +77,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/alloca.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h:
 

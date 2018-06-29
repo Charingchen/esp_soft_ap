@@ -1,7 +1,7 @@
 libsodium/src/libsodium/sodium/utils.o: \
  C:/msys32/home/esp/esp-idf/components/libsodium/libsodium/src/libsodium/sodium/utils.c \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdlib.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/_ansi.h \
@@ -39,7 +39,7 @@ libsodium/src/libsodium/sodium/utils.o: \
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/stdlib.h:
 

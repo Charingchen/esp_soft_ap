@@ -39,7 +39,7 @@ syscall_table.o: \
  C:/msys32/home/esp/esp-idf/components/vfs/include/esp_vfs.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_err.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/dirent.h \
  C:/msys32/home/esp/esp-idf/components/vfs/include/sys/dirent.h \
@@ -123,7 +123,7 @@ C:/msys32/home/esp/esp-idf/components/esp32/include/esp_err.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h:
 

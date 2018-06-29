@@ -3,7 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := soft-ap
+PROJECT_NAME := esp_soft_ap
 
 include $(IDF_PATH)/make/project.mk
-

@@ -16,7 +16,7 @@ spiram.o: C:/msys32/home/esp/esp-idf/components/esp32/spiram.c \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/lock.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/cdefs.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_attr.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_err.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdio.h \
@@ -121,7 +121,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/sys/cdefs.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/esp32/include/esp_attr.h:
 

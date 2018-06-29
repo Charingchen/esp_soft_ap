@@ -43,7 +43,7 @@ nghttp2/lib/nghttp2_session.o: \
  C:/msys32/home/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_pq.h \
  C:/msys32/home/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_callbacks.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h \
  C:/msys32/home/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_helper.h \
  C:/msys32/home/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_net.h \
@@ -138,7 +138,7 @@ C:/msys32/home/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_callbacks.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h:
 

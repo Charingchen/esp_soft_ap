@@ -5,7 +5,7 @@ Partition.o: \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/_default_types.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/features.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/_intsup.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/soc.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_assert.h \
@@ -47,7 +47,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/sys/features.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/esp32/include/rom/ets_sys.h:
 

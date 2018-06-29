@@ -22,7 +22,7 @@ bt.o: C:/msys32/home/esp/esp-idf/components/bt/bt.c \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/stdio.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/string.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/heap/include/esp_heap_caps.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdint.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/_intsup.h \
@@ -145,7 +145,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/string.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/heap/include/esp_heap_caps.h:
 

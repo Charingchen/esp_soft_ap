@@ -9,7 +9,7 @@ esp32/rtc_sleep.o: \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_attr.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_dport_access.h \
- c:\msys32\home\esp\soft-ap\build\include\sdkconfig.h \
+ c:\msys32\home\esp\esp_soft_ap\build\include\sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/i2s_reg.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/timer_group_reg.h \
  C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/bb_reg.h \
@@ -35,7 +35,7 @@ C:/msys32/home/esp/esp-idf/components/esp32/include/esp_attr.h:
 
 C:/msys32/home/esp/esp-idf/components/esp32/include/esp_dport_access.h:
 
-c:\msys32\home\esp\soft-ap\build\include\sdkconfig.h:
+c:\msys32\home\esp\esp_soft_ap\build\include\sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/soc/esp32/include/soc/i2s_reg.h:
 

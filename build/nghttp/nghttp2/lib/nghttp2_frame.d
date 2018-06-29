@@ -37,7 +37,7 @@ nghttp2/lib/nghttp2_frame.o: \
  C:/msys32/home/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_mem.h \
  C:/msys32/home/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_rcbuf.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/errno.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/errno.h \
@@ -120,7 +120,7 @@ C:/msys32/home/esp/esp-idf/components/nghttp/nghttp2/lib/nghttp2_rcbuf.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h:
 

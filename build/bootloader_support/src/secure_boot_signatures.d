@@ -1,6 +1,6 @@
 src/secure_boot_signatures.o: \
  C:/msys32/home/esp/esp-idf/components/bootloader_support/src/secure_boot_signatures.c \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/bootloader_support/include_priv/bootloader_flash.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdint.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/_default_types.h \
@@ -46,7 +46,7 @@ src/secure_boot_signatures.o: \
  C:/msys32/home/esp/esp-idf/components/esp32/include/rom/sha.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_types.h
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/bootloader_support/include_priv/bootloader_flash.h:
 

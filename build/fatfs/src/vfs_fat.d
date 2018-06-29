@@ -37,7 +37,7 @@ src/vfs_fat.o: C:/msys32/home/esp/esp-idf/components/fatfs/src/vfs_fat.c \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdio.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/stdio.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h \
  C:/msys32/home/esp/esp-idf/components/log/include/esp_log.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/rom/ets_sys.h \
@@ -180,7 +180,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/sys/stdio.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h:
 

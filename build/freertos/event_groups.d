@@ -20,7 +20,7 @@ event_groups.o: \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdint.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/xtensa/hal.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/xtensa/config/core.h \
@@ -123,7 +123,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
 C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

@@ -14,7 +14,7 @@ xtensa_vector_defaults.o: \
  C:/msys32/home/esp/esp-idf/components/esp32/include/xtensa/config/system.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/xtensa/simcall.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/xtensa_context.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/xtensa/xtruntime-frames.h \
@@ -51,7 +51,7 @@ C:/msys32/home/esp/esp-idf/components/esp32/include/xtensa/simcall.h:
 
 C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h:
 

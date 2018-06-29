@@ -1,6 +1,6 @@
 pm_trace.o: C:/msys32/home/esp/esp-idf/components/esp32/pm_trace.c \
  C:/msys32/home/esp/esp-idf/components/esp32/pm_trace.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/driver/include/driver/gpio.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_err.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdint.h \
@@ -42,7 +42,7 @@ pm_trace.o: C:/msys32/home/esp/esp-idf/components/esp32/pm_trace.c \
 
 C:/msys32/home/esp/esp-idf/components/esp32/pm_trace.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/driver/include/driver/gpio.h:
 

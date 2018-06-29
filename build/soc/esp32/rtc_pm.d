@@ -4,7 +4,7 @@ esp32/rtc_pm.o: C:/msys32/home/esp/esp-idf/components/soc/esp32/rtc_pm.c \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/features.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdlib.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/_ansi.h \
@@ -36,7 +36,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/stdlib.h:
 

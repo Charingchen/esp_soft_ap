@@ -1,7 +1,7 @@
 library/ssl_ticket.o: \
  C:/msys32/home/esp/esp-idf/components/mbedtls/library/ssl_ticket.c \
  C:/msys32/home/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/mbedtls/include/mbedtls/check_config.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/limits.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/newlib.h \
@@ -52,7 +52,7 @@ library/ssl_ticket.o: \
 
 C:/msys32/home/esp/esp-idf/components/mbedtls/port/include/mbedtls/esp_config.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/mbedtls/include/mbedtls/check_config.h:
 

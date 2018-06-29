@@ -24,7 +24,7 @@ port/minicheck.o: \
  C:/msys32/home/esp/esp-idf/components/newlib/include/setjmp.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/setjmp.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h \
  C:/msys32/home/esp/esp-idf/components/expat/include/expat/internal.h \
  C:/msys32/home/esp/esp-idf/components/expat/port/include/minicheck.h
@@ -77,7 +77,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/machine/setjmp.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/assert.h:
 

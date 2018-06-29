@@ -9,7 +9,7 @@ src/efuse.o: \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_assert.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdlib.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/_ansi.h \
@@ -48,7 +48,7 @@ C:/msys32/home/esp/esp-idf/components/esp32/include/esp_assert.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/stdlib.h:
 

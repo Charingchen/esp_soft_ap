@@ -24,7 +24,7 @@ sdmmc_transaction.o: \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/sched.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/sys/stdio.h \
  C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/stdlib.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/alloca.h \
@@ -142,7 +142,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/sys/stdio.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/platform_include/assert.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/stdlib.h:
 

@@ -1,6 +1,6 @@
 src/secure_boot_signatures.o: \
  C:/msys32/home/esp/esp-idf/components/bootloader_support/src/secure_boot_signatures.c \
- c:\msys32\home\esp\soft-ap\build\include\sdkconfig.h \
+ c:\msys32\home\esp\esp_soft_ap\build\include\sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/bootloader_support/include_priv/bootloader_flash.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/esp_err.h \
  C:/msys32/home/esp/esp-idf/components/spi_flash/include/esp_spi_flash.h \
@@ -19,7 +19,7 @@ src/secure_boot_signatures.o: \
  C:/msys32/home/esp/esp-idf/components/micro-ecc/micro-ecc/uECC.h \
  C:/msys32/home/esp/esp-idf/components/esp32/include/rom/sha.h
 
-c:\msys32\home\esp\soft-ap\build\include\sdkconfig.h:
+c:\msys32\home\esp\esp_soft_ap\build\include\sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/bootloader_support/include_priv/bootloader_flash.h:
 

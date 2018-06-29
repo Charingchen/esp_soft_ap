@@ -23,7 +23,7 @@ wifi_internal.o: \
  C:/msys32/home/esp/esp-idf/components/newlib/include/machine/stdlib.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/alloca.h \
  C:/msys32/home/esp/esp-idf/components/heap/include/multi_heap.h \
- C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h \
+ C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
@@ -164,7 +164,7 @@ C:/msys32/home/esp/esp-idf/components/newlib/include/alloca.h:
 
 C:/msys32/home/esp/esp-idf/components/heap/include/multi_heap.h:
 
-C:/msys32/home/esp/soft-ap/build/include/sdkconfig.h:
+C:/msys32/home/esp/esp_soft_ap/build/include/sdkconfig.h:
 
 C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
