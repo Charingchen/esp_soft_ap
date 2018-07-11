@@ -27,22 +27,12 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 	        break;
 	    case SYSTEM_EVENT_AP_STACONNECTED:
 	    	ESP_LOGI("EVENT","Station connected");
-//	    	wifi_sta_list_t stationList;
-//	    	esp_wifi_ap_get_sta_list(&stationList);
-//
-//			wifi_sta_info_t station = stationList.sta[0];
-//
-//			ESP_LOGI("EVENT", "MAC: %d:%d:%d:%d:%d", station.mac[0],station.mac[1],station.mac[2],station.mac[3],station.mac[4]);
-//			for(int j = 0; j< 6; j++){
-//			  char str[3];
-//
-//			  sprintf(str, "%02x", (int)station.mac[j]);
-//			 print(str);
-//
-//			  if(j<5){
-//				 print(":");
-//			  }
-//			}
+	    	wifi_sta_list_t stationList;
+	    	esp_wifi_ap_get_sta_list(&stationList);
+
+			wifi_sta_info_t station = stationList.sta[0];
+
+			ESP_LOGI("EVENT", "MAC: %d:%d:%d:%d:%d:%d", station.mac[0],station.mac[1],station.mac[2],station.mac[3],station.mac[4],station.mac[5]);
 
 	    	xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
 	        break;
