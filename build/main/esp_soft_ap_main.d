@@ -123,8 +123,14 @@ esp_soft_ap_main.o: \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/event_groups.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/timers.h \
  C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/task.h \
+ C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/sockets.h \
  C:/msys32/home/esp/esp-idf/components/newlib/include/string.h \
- C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h
+ C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h \
+ C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/err.h \
+ C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/inet.h \
+ C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/sys.h \
+ C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/netdb.h \
+ C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/dns.h
 
 C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
@@ -372,7 +378,19 @@ C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/timers.h:
 
 C:/msys32/home/esp/esp-idf/components/freertos/include/freertos/task.h:
 
+C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/sockets.h:
+
 C:/msys32/home/esp/esp-idf/components/newlib/include/string.h:
 
 C:/msys32/home/esp/esp-idf/components/newlib/include/sys/string.h:
+
+C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/err.h:
+
+C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/inet.h:
+
+C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/sys.h:
+
+C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/netdb.h:
+
+C:/msys32/home/esp/esp-idf/components/lwip/include/lwip/lwip/dns.h:
 /home/esp/esp_soft_ap/main/./esp_soft_ap_main.c:
