@@ -23,6 +23,8 @@
 #include <string.h>
 
 #define SSID "ESP32AP"
+//#define customIp ((u32_t)0xC0A80103UL) //102.168.1.3
+
 
 static const char* TAG = "SOFTAP";
 static EventGroupHandle_t wifi_event_group;
@@ -148,12 +150,13 @@ void print_sta_info(void *pvParam){
 void tcp_server(void *pvParam){
     ESP_LOGI(TAG,"tcp_server task started \n");
     struct sockaddr_in tcpServerAddr;
-    tcpServerAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    tcpServerAddr.sin_family = AF_INET;
-    tcpServerAddr.sin_port = htons( 3000 );
+    tcpServerAddr.sin_addr.s_addr = htonl(INADDR_ANY);//don't work with custom ip somehow?
+	tcpServerAddr.sin_family = AF_INET;
+	tcpServerAddr.sin_port = htons( 100 );
     int s, r;
     char recv_buf[64];
     static struct sockaddr_in remote_addr;
+    remote_addr.sin_addr.s_addr = htonl((u32_t)0xC0A80102);
     static unsigned int socklen;
     socklen = sizeof(remote_addr);
     int cs;//client socket
@@ -180,6 +183,7 @@ void tcp_server(void *pvParam){
             continue;
         }
         while(1){
+        	ESP_LOGI(TAG,"Enter Socket Listening loop");
             cs=accept(s,(struct sockaddr *)&remote_addr, &socklen);
             ESP_LOGI(TAG,"New connection request,Request data:");
             //set O_NONBLOCK so that recv will return, otherwise we need to impliment message end
@@ -193,6 +197,8 @@ void tcp_server(void *pvParam){
                     putchar(recv_buf[i]);
                 }
             } while(r > 0);
+
+            //ESP_LOGI(TAG,"Reading %d",recv_buf);
 
             ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
 
