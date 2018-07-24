@@ -33,6 +33,7 @@ static EventGroupHandle_t wifi_event_group;
 const int CLIENT_CONNECTED_BIT = BIT0;
 const int CLIENT_DISCONNECTED_BIT = BIT1;
 const int AP_STARTED_BIT = BIT2;
+uint16_t apCount = 0;
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
@@ -59,6 +60,46 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 	    case SYSTEM_EVENT_AP_STOP:
 			ESP_LOGI("EVENT","AP_STOP");
 			break;
+
+	    case SYSTEM_EVENT_SCAN_DONE:
+	        esp_wifi_scan_get_ap_num(&apCount);
+	        printf("Number of access points found: %d\n",event->event_info.scan_done.number);
+	        if (apCount == 0) {
+	           return ESP_OK;
+	        }
+	        wifi_ap_record_t *list = (wifi_ap_record_t *)malloc(sizeof(wifi_ap_record_t) * apCount);
+	        ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
+	        int i;
+	        printf("======================================================================\n");
+	        printf("             SSID             |    RSSI    |           AUTH           \n");
+	        printf("======================================================================\n");
+	        for (i=0; i<apCount; i++) {
+	           char *authmode;
+	           switch(list[i].authmode) {
+	              case WIFI_AUTH_OPEN:
+	                 authmode = "WIFI_AUTH_OPEN";
+	                 break;
+	              case WIFI_AUTH_WEP:
+	                 authmode = "WIFI_AUTH_WEP";
+	                 break;
+	              case WIFI_AUTH_WPA_PSK:
+	                 authmode = "WIFI_AUTH_WPA_PSK";
+	                 break;
+	              case WIFI_AUTH_WPA2_PSK:
+	                 authmode = "WIFI_AUTH_WPA2_PSK";
+	                 break;
+	              case WIFI_AUTH_WPA_WPA2_PSK:
+	                 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
+	                 break;
+	              default:
+	                 authmode = "Unknown";
+	                 break;
+	           }
+	           printf("%26.26s    |    % 4d    |    %22.22s\n",list[i].ssid, list[i].rssi, authmode);
+	        }
+	        free(list);
+	        printf("\n\n");
+	        break;
 	    default:
 	        break;
 	    }
@@ -119,7 +160,7 @@ static void wifi_init(void)
 	wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
 	ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
 	ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-	ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_AP) );
+	ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_APSTA) );
 	wifi_config_t ap_config = {
 		.ap = {
 			.ssid = SSID,
@@ -198,8 +239,6 @@ void tcp_server(void *pvParam){
                 }
             } while(r > 0);
 
-            //ESP_LOGI(TAG,"Reading %d",recv_buf);
-
             ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
 
             if( write(cs , MESSAGE , strlen(MESSAGE)) < 0)
@@ -228,5 +267,19 @@ void app_main(void)
 	 wifi_init();
 	 xTaskCreate(&tcp_server,"tcp_server",4096,NULL,5,NULL);
 	 xTaskCreate(&print_sta_info,"print_sta_info",4096,NULL,5,NULL);
+
+	 // Let us test a WiFi scan ...
+	   wifi_scan_config_t scanConf = {
+	      .ssid = NULL,
+	      .bssid = NULL,
+	      .channel = 0,
+	      .show_hidden = true
+	   };
+
+	   while(true){
+	         ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));    //The true parameter cause the function to block until
+	                                                                   //the scan is done.
+	         vTaskDelay(1000 / portTICK_PERIOD_MS);
+	     }
 
 }
