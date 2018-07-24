@@ -275,7 +275,7 @@ void app_main(void)
 	      .channel = 0,
 	      .show_hidden = true
 	   };
-
+// Create a task to do the scan when it needs to do it
 	   while(true){
 	         ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));    //The true parameter cause the function to block until
 	                                                                   //the scan is done.
