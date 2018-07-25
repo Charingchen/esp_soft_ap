@@ -33,7 +33,17 @@ static EventGroupHandle_t wifi_event_group;
 const int CLIENT_CONNECTED_BIT = BIT0;
 const int CLIENT_DISCONNECTED_BIT = BIT1;
 const int AP_STARTED_BIT = BIT2;
+static const char* SCAN_ENABLE = "CMD1";
+//initial AP count value
 uint16_t apCount = 0;
+
+// Wifi Scan initial config
+	   wifi_scan_config_t scanConf = {
+	      .ssid = NULL,
+	      .bssid = NULL,
+	      .channel = 0,
+	      .show_hidden = true
+	   };
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
@@ -187,6 +197,24 @@ void print_sta_info(void *pvParam){
 	}
 }
 
+int cmd_detection (const char* input, const char*cmd){
+	static unsigned int input_len;
+	input_len = sizeof(input);
+	if (input_len < 3){
+		return -1;
+	}
+	else{
+		for (int i = 0 ;i < 3; i++){
+			printf("input[%d] = %c cmd = %c",i, input[i],cmd[i]);
+
+			if (input[i] != cmd[i]){
+				return 0;
+			}
+		}
+		return 1;
+	}
+}
+
 
 void tcp_server(void *pvParam){
     ESP_LOGI(TAG,"tcp_server task started \n");
@@ -201,6 +229,10 @@ void tcp_server(void *pvParam){
     static unsigned int socklen;
     socklen = sizeof(remote_addr);
     int cs;//client socket
+    int cmd_return;
+
+ //   char* cmd_recv;
+
     xEventGroupWaitBits(wifi_event_group,AP_STARTED_BIT,false,true,portMAX_DELAY);
     while(1){
         s = socket(AF_INET, SOCK_STREAM, 0);
@@ -231,15 +263,37 @@ void tcp_server(void *pvParam){
             //detection logic. If know the client message format you should instead impliment logic
             //detect the end of message
             fcntl(cs,F_SETFL,O_NONBLOCK);
+
+
             do {
                 bzero(recv_buf, sizeof(recv_buf));
                 r = recv(cs, recv_buf, sizeof(recv_buf)-1,0);
+                printf("r= %i",r);
+
+                // need to do keep receving until get the message catch logic
+                if (r>0){
+                	 cmd_return = cmd_detection(recv_buf,SCAN_ENABLE);
+                	 if (cmd_return == 1){
+                	            	ESP_LOGI("CMD", "Receive CMD1");
+                	            }
+                	            else{
+                	            	ESP_LOGI("CMD", "CMD detection return: %d",cmd_return );
+                	            }
+
+//                	cmd_recv = malloc(strlen(recv_buf));
+//                	strcpy(cmd_recv, recv_buf);
+                }
                 for(int i = 0; i < r; i++) {
                     putchar(recv_buf[i]);
+
+
                 }
             } while(r > 0);
 
             ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
+            //CMD detection
+
+
 
             if( write(cs , MESSAGE , strlen(MESSAGE)) < 0)
             {
@@ -268,18 +322,12 @@ void app_main(void)
 	 xTaskCreate(&tcp_server,"tcp_server",4096,NULL,5,NULL);
 	 xTaskCreate(&print_sta_info,"print_sta_info",4096,NULL,5,NULL);
 
-	 // Let us test a WiFi scan ...
-	   wifi_scan_config_t scanConf = {
-	      .ssid = NULL,
-	      .bssid = NULL,
-	      .channel = 0,
-	      .show_hidden = true
-	   };
+
 // Create a task to do the scan when it needs to do it
-	   while(true){
-	         ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));    //The true parameter cause the function to block until
-	                                                                   //the scan is done.
-	         vTaskDelay(1000 / portTICK_PERIOD_MS);
-	     }
+//	   while(true){
+//	         ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));    //The true parameter cause the function to block until
+//	                                                                   //the scan is done.
+//	         vTaskDelay(1000 / portTICK_PERIOD_MS);
+//	     }
 
 }
