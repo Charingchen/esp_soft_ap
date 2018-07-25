@@ -24,16 +24,22 @@
 
 #define SSID "ESP32AP"
 //#define customIp ((u32_t)0xC0A80103UL) //102.168.1.3
-
+#define CMD 99
+#define EN_SCAN 49 //(int)"1"
+#define EN_TX 50//(int)"2"
 
 static const char* TAG = "SOFTAP";
 static EventGroupHandle_t wifi_event_group;
 #define LISTENQ 2
 #define MESSAGE "Hello TCP Client!!"
+
+
 const int CLIENT_CONNECTED_BIT = BIT0;
 const int CLIENT_DISCONNECTED_BIT = BIT1;
 const int AP_STARTED_BIT = BIT2;
-static const char* SCAN_ENABLE = "CMD1";
+
+
+
 //initial AP count value
 uint16_t apCount = 0;
 
@@ -197,22 +203,29 @@ void print_sta_info(void *pvParam){
 	}
 }
 
-int cmd_detection (const char* input, const char*cmd){
+int cmd_detection (const char* input){
 	static unsigned int input_len;
 	input_len = sizeof(input);
-	if (input_len < 3){
-		return -1;
-	}
-	else{
-		for (int i = 0 ;i < 3; i++){
-			printf("input[%d] = %c cmd = %c",i, input[i],cmd[i]);
+	//printf("input len = %i ", input_len);
 
-			if (input[i] != cmd[i]){
-				return 0;
-			}
+	if (input_len != 4){
+		 ESP_LOGI("CMD", "Not a Command, jumping out....");
+		 return -1;
+	}
+
+	if (input[0] == CMD){
+		switch (input[1]){
+		case EN_SCAN:
+			printf("\nStart WIFI scan\n");
+			break;
+		case EN_TX:
+			printf("\nSelect WIFI and start the SSID password transmitting\n");
+			break;
 		}
 		return 1;
 	}
+	printf("\n Unkown CMD\n");
+	return 0;
 }
 
 
@@ -229,7 +242,6 @@ void tcp_server(void *pvParam){
     static unsigned int socklen;
     socklen = sizeof(remote_addr);
     int cs;//client socket
-    int cmd_return;
 
  //   char* cmd_recv;
 
@@ -259,8 +271,8 @@ void tcp_server(void *pvParam){
         	ESP_LOGI(TAG,"Enter Socket Listening loop");
             cs=accept(s,(struct sockaddr *)&remote_addr, &socklen);
             ESP_LOGI(TAG,"New connection request,Request data:");
-            //set O_NONBLOCK so that recv will return, otherwise we need to impliment message end
-            //detection logic. If know the client message format you should instead impliment logic
+            //set O_NONBLOCK so that recv will return, otherwise we need to implement message end
+            //detection logic. If know the client message format you should instead implement logic
             //detect the end of message
             fcntl(cs,F_SETFL,O_NONBLOCK);
 
@@ -268,31 +280,19 @@ void tcp_server(void *pvParam){
             do {
                 bzero(recv_buf, sizeof(recv_buf));
                 r = recv(cs, recv_buf, sizeof(recv_buf)-1,0);
-                printf("r= %i",r);
 
-                // need to do keep receving until get the message catch logic
+                // need to do keep receiving until get the message catch logic
                 if (r>0){
-                	 cmd_return = cmd_detection(recv_buf,SCAN_ENABLE);
-                	 if (cmd_return == 1){
-                	            	ESP_LOGI("CMD", "Receive CMD1");
-                	            }
-                	            else{
-                	            	ESP_LOGI("CMD", "CMD detection return: %d",cmd_return );
-                	            }
-
-//                	cmd_recv = malloc(strlen(recv_buf));
-//                	strcpy(cmd_recv, recv_buf);
+                	if (cmd_detection(recv_buf) ==1){
+                		break;
+                	}
                 }
                 for(int i = 0; i < r; i++) {
                     putchar(recv_buf[i]);
-
-
                 }
             } while(r > 0);
 
             ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
-            //CMD detection
-
 
 
             if( write(cs , MESSAGE , strlen(MESSAGE)) < 0)
