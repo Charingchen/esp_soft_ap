@@ -31,7 +31,8 @@
 static const char* TAG = "SOFTAP";
 static EventGroupHandle_t wifi_event_group;
 #define LISTENQ 2
-#define MESSAGE "Hello TCP Client!!"
+#define CMD_RECEIVED  "CMD received!"
+#define SEND_FAIL  "Got NO CMD!"
 
 
 const int CLIENT_CONNECTED_BIT = BIT0;
@@ -224,7 +225,7 @@ int cmd_detection (const char* input){
 		}
 		return 1;
 	}
-	printf("\n Unkown CMD\n");
+	printf("\n Unknown CMD\n");
 	return 0;
 }
 
@@ -242,6 +243,7 @@ void tcp_server(void *pvParam){
     static unsigned int socklen;
     socklen = sizeof(remote_addr);
     int cs;//client socket
+    int cmd_recv = 0;
 
  //   char* cmd_recv;
 
@@ -284,6 +286,7 @@ void tcp_server(void *pvParam){
                 // need to do keep receiving until get the message catch logic
                 if (r>0){
                 	if (cmd_detection(recv_buf) ==1){
+                		cmd_recv = 1;
                 		break;
                 	}
                 }
@@ -294,16 +297,30 @@ void tcp_server(void *pvParam){
 
             ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
 
-
-            if( write(cs , MESSAGE , strlen(MESSAGE)) < 0)
-            {
-                ESP_LOGE(TAG, "... Send failed \n");
-                close(s);
-                vTaskDelay(4000 / portTICK_PERIOD_MS);
-                continue;
+            if (cmd_recv == 1){
+            	if( write(cs ,CMD_RECEIVED , strlen(CMD_RECEIVED)) < 0)
+            	{
+					ESP_LOGE(TAG, "... Send failed \n");
+					close(s);
+					vTaskDelay(4000 / portTICK_PERIOD_MS);
+					continue;
+				}
+				ESP_LOGI(TAG, "... socket send success");
+				close(cs);
+				cmd_recv = 0;
             }
-            ESP_LOGI(TAG, "... socket send success");
-            close(cs);
+
+            else {
+            	if( write(cs ,SEND_FAIL, strlen(SEND_FAIL)) < 0)
+				{
+					ESP_LOGE(TAG, "... Send failed \n");
+					close(s);
+					vTaskDelay(4000 / portTICK_PERIOD_MS);
+					continue;
+				}
+				ESP_LOGI(TAG, "... socket send success");
+				close(cs);
+            }
         }
         ESP_LOGI(TAG, "... server will be opened in 5 seconds");
         vTaskDelay(5000 / portTICK_PERIOD_MS);
