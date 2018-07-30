@@ -38,11 +38,10 @@ static EventGroupHandle_t wifi_event_group;
 const int CLIENT_CONNECTED_BIT = BIT0;
 const int CLIENT_DISCONNECTED_BIT = BIT1;
 const int AP_STARTED_BIT = BIT2;
-
-
-
+int scan_done;
 //initial AP count value
 uint16_t apCount = 0;
+
 
 // Wifi Scan initial config
 	   wifi_scan_config_t scanConf = {
@@ -80,42 +79,41 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 
 	    case SYSTEM_EVENT_SCAN_DONE:
 	        esp_wifi_scan_get_ap_num(&apCount);
-	        printf("Number of access points found: %d\n",event->event_info.scan_done.number);
 	        if (apCount == 0) {
 	           return ESP_OK;
 	        }
-	        wifi_ap_record_t *list = (wifi_ap_record_t *)malloc(sizeof(wifi_ap_record_t) * apCount);
-	        ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
-	        int i;
-	        printf("======================================================================\n");
-	        printf("             SSID             |    RSSI    |           AUTH           \n");
-	        printf("======================================================================\n");
-	        for (i=0; i<apCount; i++) {
-	           char *authmode;
-	           switch(list[i].authmode) {
-	              case WIFI_AUTH_OPEN:
-	                 authmode = "WIFI_AUTH_OPEN";
-	                 break;
-	              case WIFI_AUTH_WEP:
-	                 authmode = "WIFI_AUTH_WEP";
-	                 break;
-	              case WIFI_AUTH_WPA_PSK:
-	                 authmode = "WIFI_AUTH_WPA_PSK";
-	                 break;
-	              case WIFI_AUTH_WPA2_PSK:
-	                 authmode = "WIFI_AUTH_WPA2_PSK";
-	                 break;
-	              case WIFI_AUTH_WPA_WPA2_PSK:
-	                 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
-	                 break;
-	              default:
-	                 authmode = "Unknown";
-	                 break;
-	           }
-	           printf("%26.26s    |    % 4d    |    %22.22s\n",list[i].ssid, list[i].rssi, authmode);
-	        }
-	        free(list);
-	        printf("\n\n");
+	        printf("Number of access points found: %d\n",event->event_info.scan_done.number);
+//	        int i;
+//	        printf("======================================================================\n");
+//	        printf("             SSID             |    RSSI    |           AUTH           \n");
+//	        printf("======================================================================\n");
+//	        for (i=0; i<apCount; i++) {
+//	           char *authmode;
+//	           switch(list[i].authmode) {
+//	              case WIFI_AUTH_OPEN:
+//	                 authmode = "WIFI_AUTH_OPEN";
+//	                 break;
+//	              case WIFI_AUTH_WEP:
+//	                 authmode = "WIFI_AUTH_WEP";
+//	                 break;
+//	              case WIFI_AUTH_WPA_PSK:
+//	                 authmode = "WIFI_AUTH_WPA_PSK";
+//	                 break;
+//	              case WIFI_AUTH_WPA2_PSK:
+//	                 authmode = "WIFI_AUTH_WPA2_PSK";
+//	                 break;
+//	              case WIFI_AUTH_WPA_WPA2_PSK:
+//	                 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
+//	                 break;
+//	              default:
+//	                 authmode = "Unknown";
+//	                 break;
+//	           }
+//	           printf("%26.26s    |    % 4d    |    %22.22s\n",list[i].ssid, list[i].rssi, authmode);
+//	        }
+	       // free(list);
+	        //printf("\n\n");
+	        scan_done = 1;
 	        break;
 	    default:
 	        break;
@@ -207,6 +205,10 @@ void print_sta_info(void *pvParam){
 int cmd_detection (const char* input){
 	static unsigned int input_len;
 	input_len = sizeof(input);
+	int i;
+	//char aplist [500];
+	char tempstring [50];
+	wifi_ap_record_t *list = (wifi_ap_record_t *)malloc(sizeof(wifi_ap_record_t) * apCount);
 	//printf("input len = %i ", input_len);
 
 	if (input_len != 4){
@@ -218,8 +220,48 @@ int cmd_detection (const char* input){
 		switch (input[1]){
 		case EN_SCAN:
 			printf("\nStart WIFI scan\n");
+			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));
+			scan_done = 0;
 			break;
 		case EN_TX:
+
+			//aplist= "#"; //initial and mark the beginning of the aplist string
+
+			ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
+
+			for (i=0; i<apCount; i++) {
+			   char *authmode;
+			   switch(list[i].authmode) {
+				  case WIFI_AUTH_OPEN:
+					 authmode = "WIFI_AUTH_OPEN";
+					 break;
+				  case WIFI_AUTH_WEP:
+					 authmode = "WIFI_AUTH_WEP";
+					 break;
+				  case WIFI_AUTH_WPA_PSK:
+					 authmode = "WIFI_AUTH_WPA_PSK";
+					 break;
+				  case WIFI_AUTH_WPA2_PSK:
+					 authmode = "WIFI_AUTH_WPA2_PSK";
+					 break;
+				  case WIFI_AUTH_WPA_WPA2_PSK:
+					 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
+					 break;
+				  default:
+					 authmode = "Unknown";
+					 break;
+			   }
+			   sprintf(tempstring,"SSID:%26.26s RSSI:%4d Auth mode: %s",list[i].ssid, list[i].rssi, authmode);
+//				   tempstring = list[i].ssid;
+			  // strncat(aplist,tempstring,sizeof(tempstring));
+//				   strcat(aplist,(char)list[i].rssi);
+//				   strcat(aplist,authmode);
+//				   strcat(aplist,"\n");
+			   printf(tempstring);
+			}
+			memset(tempstring,0,sizeof tempstring);
+			free(list);
+
 			printf("\nSelect WIFI and start the SSID password transmitting\n");
 			break;
 		}
@@ -313,7 +355,7 @@ void tcp_server(void *pvParam){
             else {
             	if( write(cs ,SEND_FAIL, strlen(SEND_FAIL)) < 0)
 				{
-					ESP_LOGE(TAG, "... Send failed \n");
+					ESP_LOGE(TAG, "... Send failed (sending fail cmd) \n");
 					close(s);
 					vTaskDelay(4000 / portTICK_PERIOD_MS);
 					continue;
