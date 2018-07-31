@@ -17,7 +17,7 @@
 #include "lwip/sockets.h"
 #include "lwip/sys.h"
 #include "lwip/netdb.h"
-#include "lwip/dns.h"
+#inlude "lwip/dns.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -38,7 +38,9 @@ static EventGroupHandle_t wifi_event_group;
 const int CLIENT_CONNECTED_BIT = BIT0;
 const int CLIENT_DISCONNECTED_BIT = BIT1;
 const int AP_STARTED_BIT = BIT2;
-int scan_done;
+int scan_done = 0;
+char* info_tosend;
+int ready_send = 0;
 //initial AP count value
 uint16_t apCount = 0;
 
@@ -83,37 +85,8 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 	           return ESP_OK;
 	        }
 	        printf("Number of access points found: %d\n",event->event_info.scan_done.number);
-//	        int i;
-//	        printf("======================================================================\n");
-//	        printf("             SSID             |    RSSI    |           AUTH           \n");
-//	        printf("======================================================================\n");
-//	        for (i=0; i<apCount; i++) {
-//	           char *authmode;
-//	           switch(list[i].authmode) {
-//	              case WIFI_AUTH_OPEN:
-//	                 authmode = "WIFI_AUTH_OPEN";
-//	                 break;
-//	              case WIFI_AUTH_WEP:
-//	                 authmode = "WIFI_AUTH_WEP";
-//	                 break;
-//	              case WIFI_AUTH_WPA_PSK:
-//	                 authmode = "WIFI_AUTH_WPA_PSK";
-//	                 break;
-//	              case WIFI_AUTH_WPA2_PSK:
-//	                 authmode = "WIFI_AUTH_WPA2_PSK";
-//	                 break;
-//	              case WIFI_AUTH_WPA_WPA2_PSK:
-//	                 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
-//	                 break;
-//	              default:
-//	                 authmode = "Unknown";
-//	                 break;
-//	           }
-//	           printf("%26.26s    |    % 4d    |    %22.22s\n",list[i].ssid, list[i].rssi, authmode);
-//	        }
-	       // free(list);
-	        //printf("\n\n");
 	        scan_done = 1;
+	        printf("scan_done: %i", scan_done);
 	        break;
 	    default:
 	        break;
@@ -206,11 +179,13 @@ int cmd_detection (const char* input){
 	static unsigned int input_len;
 	input_len = sizeof(input);
 	int i;
-	//char aplist [500];
-	char tempstring [50];
-	wifi_ap_record_t *list = (wifi_ap_record_t *)malloc(sizeof(wifi_ap_record_t) * apCount);
-	//printf("input len = %i ", input_len);
+	char tempstring[50];
+	int sta_num = 10;
 
+	wifi_ap_record_t *list = (wifi_ap_record_t *)malloc(sizeof(wifi_ap_record_t) * apCount);
+	info_tosend = (char *)malloc(sizeof(tempstring)*(sta_num+1) + 8);
+	//printf("input len = %i ", input_len);
+	strcpy(info_tosend,"STR");
 	if (input_len != 4){
 		 ESP_LOGI("CMD", "Not a Command, jumping out....");
 		 return -1;
@@ -221,49 +196,55 @@ int cmd_detection (const char* input){
 		case EN_SCAN:
 			printf("\nStart WIFI scan\n");
 			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));
-			scan_done = 0;
+			//scan_done = 0;
 			break;
 		case EN_TX:
-
-			//aplist= "#"; //initial and mark the beginning of the aplist string
-
-			ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
-
-			for (i=0; i<apCount; i++) {
-			   char *authmode;
-			   switch(list[i].authmode) {
-				  case WIFI_AUTH_OPEN:
-					 authmode = "WIFI_AUTH_OPEN";
-					 break;
-				  case WIFI_AUTH_WEP:
-					 authmode = "WIFI_AUTH_WEP";
-					 break;
-				  case WIFI_AUTH_WPA_PSK:
-					 authmode = "WIFI_AUTH_WPA_PSK";
-					 break;
-				  case WIFI_AUTH_WPA2_PSK:
-					 authmode = "WIFI_AUTH_WPA2_PSK";
-					 break;
-				  case WIFI_AUTH_WPA_WPA2_PSK:
-					 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
-					 break;
-				  default:
-					 authmode = "Unknown";
-					 break;
-			   }
-			   sprintf(tempstring,"SSID:%26.26s RSSI:%4d Auth mode: %s",list[i].ssid, list[i].rssi, authmode);
-//				   tempstring = list[i].ssid;
-			  // strncat(aplist,tempstring,sizeof(tempstring));
-//				   strcat(aplist,(char)list[i].rssi);
-//				   strcat(aplist,authmode);
-//				   strcat(aplist,"\n");
-			   printf(tempstring);
+			if (scan_done == 1){
+				ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
+				for (i=0; i<sta_num; i++) {
+				   char *authmode;
+				   switch(list[i].authmode) {
+					  case WIFI_AUTH_OPEN:
+						 authmode = "WIFI_AUTH_OPEN";
+						 break;
+					  case WIFI_AUTH_WEP:
+						 authmode = "WIFI_AUTH_WEP";
+						 break;
+					  case WIFI_AUTH_WPA_PSK:
+						 authmode = "WIFI_AUTH_WPA_PSK";
+						 break;
+					  case WIFI_AUTH_WPA2_PSK:
+						 authmode = "WIFI_AUTH_WPA2_PSK";
+						 break;
+					  case WIFI_AUTH_WPA_WPA2_PSK:
+						 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
+						 break;
+					  default:
+						 authmode = "Unknown";
+						 break;
+				   }
+				   sprintf(tempstring,"SSID:%s RSSI:%4d Auth mode: %s\n",list[i].ssid, list[i].rssi, authmode);
+				   printf(tempstring);
+				   strcat(info_tosend, tempstring);
+//				   if (i == 0){
+//					   strcpy(info_tosend, tempstring);
+//				   }
+//				   else{
+//					   strcat(info_tosend, tempstring);
+//				   }
+				}
+				printf("info_tosend:\n");
+				printf(info_tosend);
+				free(list);
+				ready_send = 1;
+				scan_done = 0;
+				printf("\nSelect WIFI and start the SSID password transmitting\n");
+				break;
 			}
-			memset(tempstring,0,sizeof tempstring);
-			free(list);
-
-			printf("\nSelect WIFI and start the SSID password transmitting\n");
-			break;
+			else{
+				ESP_LOGI("WIFISCAN", "No Scan Done yet.");
+				printf("scan_done: %i", scan_done);
+			}
 		}
 		return 1;
 	}
@@ -340,16 +321,35 @@ void tcp_server(void *pvParam){
             ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
 
             if (cmd_recv == 1){
-            	if( write(cs ,CMD_RECEIVED , strlen(CMD_RECEIVED)) < 0)
-            	{
-					ESP_LOGE(TAG, "... Send failed \n");
-					close(s);
-					vTaskDelay(4000 / portTICK_PERIOD_MS);
-					continue;
-				}
-				ESP_LOGI(TAG, "... socket send success");
-				close(cs);
-				cmd_recv = 0;
+            	if ( ready_send == 1){
+            		if( write(cs ,info_tosend , strlen(info_tosend)) < 0)
+					{
+						ESP_LOGE(TAG, "... Send failed \n");
+						close(s);
+						vTaskDelay(4000 / portTICK_PERIOD_MS);
+						continue;
+					}
+					ESP_LOGI(TAG, "... socket send success");
+					close(cs);
+					cmd_recv = 0;
+					free(info_tosend);
+
+					ready_send = 0;
+            	}
+
+            	else{
+            		if( write(cs ,CMD_RECEIVED , strlen(CMD_RECEIVED)) < 0)
+					{
+						ESP_LOGE(TAG, "... Send failed \n");
+						close(s);
+						vTaskDelay(4000 / portTICK_PERIOD_MS);
+						continue;
+					}
+					ESP_LOGI(TAG, "... socket send success");
+					close(cs);
+					cmd_recv = 0;
+            	}
+
             }
 
             else {
