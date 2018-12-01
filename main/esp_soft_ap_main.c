@@ -17,7 +17,7 @@
 #include "lwip/sockets.h"
 #include "lwip/sys.h"
 #include "lwip/netdb.h"
-#inlude "lwip/dns.h"
+#include "lwip/dns.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -27,6 +27,7 @@
 #define CMD 99
 #define EN_SCAN 49 //(int)"1"
 #define EN_TX 50//(int)"2"
+#define RECV_PSWD 51//(int)"3"
 
 static const char* TAG = "SOFTAP";
 static EventGroupHandle_t wifi_event_group;
@@ -181,15 +182,19 @@ int cmd_detection (const char* input){
 	int i;
 	char tempstring[50];
 	int sta_num = 10;
+	char start_msg[5];
+	char *password;
+
 
 	wifi_ap_record_t *list = (wifi_ap_record_t *)malloc(sizeof(wifi_ap_record_t) * apCount);
 	info_tosend = (char *)malloc(sizeof(tempstring)*(sta_num+1) + 8);
-	//printf("input len = %i ", input_len);
-	strcpy(info_tosend,"STR");
-	if (input_len != 4){
-		 ESP_LOGI("CMD", "Not a Command, jumping out....");
-		 return -1;
-	}
+	//add number of station transmitting to the string
+	sprintf(start_msg, "%i#", sta_num);
+	strcpy(info_tosend,start_msg);
+//	if (input_len != 4){
+//		 ESP_LOGI("CMD", "Not a Command, jumping out....");
+//		 return -1;
+//	}
 
 	if (input[0] == CMD){
 		switch (input[1]){
@@ -197,6 +202,11 @@ int cmd_detection (const char* input){
 			printf("\nStart WIFI scan\n");
 			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));
 			//scan_done = 0;
+			break;
+		case RECV_PSWD:
+			password = &(input[2]);
+			printf("password:\n");
+			printf(password);
 			break;
 		case EN_TX:
 			if (scan_done == 1){
@@ -223,7 +233,7 @@ int cmd_detection (const char* input){
 						 authmode = "Unknown";
 						 break;
 				   }
-				   sprintf(tempstring,"SSID:%s RSSI:%4d Auth mode: %s\n",list[i].ssid, list[i].rssi, authmode);
+				   sprintf(tempstring,"SSID:%s RSSI:%4d Authmode: %s\n",list[i].ssid, list[i].rssi, authmode);
 				   printf(tempstring);
 				   strcat(info_tosend, tempstring);
 //				   if (i == 0){
