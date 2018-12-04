@@ -233,7 +233,7 @@ int cmd_detection (const char* input){
 						 authmode = "Unknown";
 						 break;
 				   }
-				   sprintf(tempstring,"SSID:%s RSSI:%4d Authmode: %s\n",list[i].ssid, list[i].rssi, authmode);
+				   sprintf(tempstring,"SSID:%s.RSSI:%3d.Authmode: %s.\n",list[i].ssid, list[i].rssi, authmode);
 				   printf(tempstring);
 				   strcat(info_tosend, tempstring);
 //				   if (i == 0){
