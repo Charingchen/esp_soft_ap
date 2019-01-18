@@ -39,6 +39,9 @@ static EventGroupHandle_t wifi_event_group;
 const int CLIENT_CONNECTED_BIT = BIT0;
 const int CLIENT_DISCONNECTED_BIT = BIT1;
 const int AP_STARTED_BIT = BIT2;
+
+TaskHandle_t xtcp_server_handle = NULL;
+
 int scan_done = 0;
 char* info_tosend;
 int ready_send = 0;
@@ -89,6 +92,22 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 	        scan_done = 1;
 	        printf("scan_done: %i", scan_done);
 	        break;
+	    case SYSTEM_EVENT_STA_START:
+	            esp_wifi_connect();
+	            break;
+	        case SYSTEM_EVENT_STA_GOT_IP:
+//	            xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
+//	                    if (!g_station_list) {
+//	                g_station_list = malloc(sizeof(station_info_t));
+//	                g_station_list->next = NULL;
+//	                ESP_ERROR_CHECK(esp_wifi_set_promiscuous_rx_cb(wifi_sniffer_cb));
+//	                ESP_ERROR_CHECK(esp_wifi_set_promiscuous(1));
+
+	            break;
+	        case SYSTEM_EVENT_STA_DISCONNECTED:
+	            esp_wifi_connect();
+	            //xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
+	            break;
 	    default:
 	        break;
 	    }
@@ -155,12 +174,14 @@ static void wifi_init(void)
 			.ssid = SSID,
 			.channel = 0,
 			.authmode = WIFI_AUTH_OPEN,
-			.ssid_hidden = 0,
+			.ssid_hidden = 1,
 			.max_connection = 1,
 			.beacon_interval = 100
-			
+
 		}
 	};
+
+
 	ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_AP, &ap_config));
     ESP_ERROR_CHECK( esp_wifi_start() );
     printf("ESP WiFi started in AP mode \n");
@@ -176,37 +197,73 @@ void print_sta_info(void *pvParam){
 	}
 }
 
-int cmd_detection (const char* input){
-	static unsigned int input_len;
-	input_len = sizeof(input);
+int cmd_detection(const char* input) {
+//	static unsigned int input_len;
+//	input_len = sizeof(input);
 	int i;
 	char tempstring[50];
 	int sta_num = 10;
 	char start_msg[5];
-	char *password;
+	char  *password, *ssid_rec;
 
-
-	wifi_ap_record_t *list = (wifi_ap_record_t *)malloc(sizeof(wifi_ap_record_t) * apCount);
-	info_tosend = (char *)malloc(sizeof(tempstring)*(sta_num+1) + 8);
+	wifi_ap_record_t *list = (wifi_ap_record_t *) malloc(
+			sizeof(wifi_ap_record_t) * apCount);
+	info_tosend = (char *) malloc(sizeof(tempstring) * (sta_num + 1) + 8);
 	//add number of station transmitting to the string
 	sprintf(start_msg, "%i#", sta_num);
-	strcpy(info_tosend,start_msg);
+	strcpy(info_tosend, start_msg);
 //	if (input_len != 4){
 //		 ESP_LOGI("CMD", "Not a Command, jumping out....");
 //		 return -1;
 //	}
 
-	if (input[0] == CMD){
-		switch (input[1]){
+	if (input[0] == CMD) {
+		switch (input[1]) {
 		case EN_SCAN:
 			printf("\nStart WIFI scan\n");
-			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));
+			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true))
+			;
 			//scan_done = 0;
 			break;
 		case RECV_PSWD:
-			password = &(input[2]);
-			printf("password:\n");
-			printf(password);
+			//deleting TCP task to stop sending and receiving cmd
+			//pointer to the password portion of the input
+			ssid_rec = strstr(input, "ssid:");
+			password = strstr(input, "pwd:");
+			int ssid_end_index = password - ssid_rec;
+			char ssid_connet [33]; //max 32 characters
+			char pwd [65]; //max 64 characters
+			strncpy(ssid_connet, ssid_rec + 5, ssid_end_index - 5);//starting + 5 offset, there length need to be -5
+			strcpy(pwd,password+4);
+			printf("\nssid_rec:");
+			printf(ssid_rec);
+			printf("\nssid_end_index:%d\n",ssid_end_index);
+			printf("\n----\nssid:\n");
+			printf(ssid_connet);
+			printf("\n----\npassword:\n");
+			printf(pwd);
+
+			ESP_ERROR_CHECK(esp_wifi_disconnect());
+			ESP_ERROR_CHECK(esp_wifi_stop());
+			ESP_ERROR_CHECK(tcpip_adapter_dhcps_stop(TCPIP_ADAPTER_IF_AP));
+			//ESP_ERROR_CHECK(esp_wifi_deinit());
+			ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
+			wifi_config_t sta_config = {
+					.sta = {
+							.ssid = "nil",
+							.password = "nil"
+					}
+
+			};
+			memcpy(sta_config.sta.ssid,ssid_connet,strlen(ssid_connet));
+			memcpy(sta_config.sta.password,pwd,strlen(pwd));
+			printf("\nsta config ssid:%s",sta_config.sta.ssid);
+			printf("\nsta config password:%s",sta_config.sta.password);
+
+			ESP_ERROR_CHECK(esp_wifi_set_config(ESP_IF_WIFI_STA, &sta_config));
+		    ESP_ERROR_CHECK(esp_wifi_start());
+		    ESP_LOGI(TAG, "Waiting for wifi");
+		    vTaskDelete( xtcp_server_handle );
 			break;
 		case EN_TX:
 			if (scan_done == 1){
@@ -385,10 +442,9 @@ void app_main(void)
 	 ESP_LOGI(TAG, "[APP] Startup..");
 	 ESP_LOGI(TAG, "[APP] Free memory: %d bytes", esp_get_free_heap_size());
 	 ESP_LOGI(TAG, "[APP] IDF version: %s", esp_get_idf_version());
-
 	 start_dhcp_server();
 	 wifi_init();
-	 xTaskCreate(&tcp_server,"tcp_server",4096,NULL,5,NULL);
+	 xTaskCreate(&tcp_server,"tcp_server",4096,NULL,5,&xtcp_server_handle);
 	 xTaskCreate(&print_sta_info,"print_sta_info",4096,NULL,5,NULL);
 
 
