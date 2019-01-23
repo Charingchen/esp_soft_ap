@@ -95,7 +95,7 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 	    case SYSTEM_EVENT_STA_START:
 	            esp_wifi_connect();
 	            break;
-	        case SYSTEM_EVENT_STA_GOT_IP:
+	    case SYSTEM_EVENT_STA_GOT_IP:
 //	            xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
 //	                    if (!g_station_list) {
 //	                g_station_list = malloc(sizeof(station_info_t));
@@ -103,8 +103,8 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 //	                ESP_ERROR_CHECK(esp_wifi_set_promiscuous_rx_cb(wifi_sniffer_cb));
 //	                ESP_ERROR_CHECK(esp_wifi_set_promiscuous(1));
 
-	            break;
-	        case SYSTEM_EVENT_STA_DISCONNECTED:
+	          break;
+	     case SYSTEM_EVENT_STA_DISCONNECTED:
 	            esp_wifi_connect();
 	            //xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
 	            break;
@@ -169,20 +169,20 @@ static void wifi_init(void)
 	ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
 	ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
 	ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_APSTA) );
-	wifi_config_t ap_config = {
-		.ap = {
-			.ssid = SSID,
-			.channel = 0,
-			.authmode = WIFI_AUTH_OPEN,
-			.ssid_hidden = 1,
-			.max_connection = 1,
-			.beacon_interval = 100
+//	wifi_config_t ap_config = {
+//		.ap = {
+//			.ssid = SSID,
+//			.channel = 0,
+//			.authmode = WIFI_AUTH_OPEN,
+//			.ssid_hidden = 0,
+//			.max_connection = 1,
+//			.beacon_interval = 100
+//
+//		}
+//	};
 
-		}
-	};
 
-
-	ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_AP, &ap_config));
+	//ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_AP, &ap_config));
     ESP_ERROR_CHECK( esp_wifi_start() );
     printf("ESP WiFi started in AP mode \n");
 }
@@ -221,8 +221,8 @@ int cmd_detection(const char* input) {
 		switch (input[1]) {
 		case EN_SCAN:
 			printf("\nStart WIFI scan\n");
-			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true))
-			;
+			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));
+			ready_send=0;
 			//scan_done = 0;
 			break;
 		case RECV_PSWD:
@@ -246,7 +246,6 @@ int cmd_detection(const char* input) {
 			ESP_ERROR_CHECK(esp_wifi_disconnect());
 			ESP_ERROR_CHECK(esp_wifi_stop());
 			ESP_ERROR_CHECK(tcpip_adapter_dhcps_stop(TCPIP_ADAPTER_IF_AP));
-			//ESP_ERROR_CHECK(esp_wifi_deinit());
 			ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
 			wifi_config_t sta_config = {
 					.sta = {
