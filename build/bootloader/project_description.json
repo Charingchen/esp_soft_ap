@@ -1,0 +1,20 @@
+{
+    "project_name":       "bootloader",
+    "project_path":       "/Users/Charing/Code/esp/esp-idf-v4.1/components/bootloader/subproject",
+    "build_dir":          "/Users/Charing/eclipse-workspace/test/build/bootloader",
+    "config_file":        "/Users/Charing/eclipse-workspace/test/sdkconfig",
+    "config_defaults":    "",
+    "app_elf":            "bootloader.elf",
+    "app_bin":            "bootloader.bin",
+    "git_revision":       "v4.1-dirty",
+    "target":             "esp32",
+    "phy_data_partition": "",
+    "monitor_baud" :      "115200",
+    "monitor_toolprefix": "xtensa-esp32-elf-",
+    "config_environment" : {
+        "COMPONENT_KCONFIGS" : "/Users/Charing/Code/esp/esp-idf-v4.1/components/efuse/Kconfig;/Users/Charing/Code/esp/esp-idf-v4.1/components/esp32/Kconfig;/Users/Charing/Code/esp/esp-idf-v4.1/components/esp_common/Kconfig;/Users/Charing/Code/esp/esp-idf-v4.1/components/log/Kconfig;/Users/Charing/Code/esp/esp-idf-v4.1/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "/Users/Charing/Code/esp/esp-idf-v4.1/components/bootloader/Kconfig.projbuild;/Users/Charing/Code/esp/esp-idf-v4.1/components/esptool_py/Kconfig.projbuild;/Users/Charing/Code/esp/esp-idf-v4.1/components/partition_table/Kconfig.projbuild"
+    },
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "esp_rom", "esptool_py", "log", "main", "micro-ecc", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "/Users/Charing/Code/esp/esp-idf-v4.1/components/bootloader", "/Users/Charing/Code/esp/esp-idf-v4.1/components/bootloader_support", "/Users/Charing/Code/esp/esp-idf-v4.1/components/efuse", "/Users/Charing/Code/esp/esp-idf-v4.1/components/esp32", "/Users/Charing/Code/esp/esp-idf-v4.1/components/esp_common", "/Users/Charing/Code/esp/esp-idf-v4.1/components/esp_rom", "/Users/Charing/Code/esp/esp-idf-v4.1/components/esptool_py", "/Users/Charing/Code/esp/esp-idf-v4.1/components/log", "/Users/Charing/Code/esp/esp-idf-v4.1/components/bootloader/subproject/main", "/Users/Charing/Code/esp/esp-idf-v4.1/components/bootloader/subproject/components/micro-ecc", "/Users/Charing/Code/esp/esp-idf-v4.1/components/partition_table", "/Users/Charing/Code/esp/esp-idf-v4.1/components/soc", "/Users/Charing/Code/esp/esp-idf-v4.1/components/spi_flash", "/Users/Charing/Code/esp/esp-idf-v4.1/components/xtensa", "" ]
+}

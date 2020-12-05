@@ -1,0 +1,4 @@
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/app_update/Kconfig.projbuild"
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/bootloader/Kconfig.projbuild"
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/esptool_py/Kconfig.projbuild"
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/partition_table/Kconfig.projbuild"

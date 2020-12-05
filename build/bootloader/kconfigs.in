@@ -1,0 +1,5 @@
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/efuse/Kconfig"
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/esp32/Kconfig"
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/esp_common/Kconfig"
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/log/Kconfig"
+source "/Users/Charing/Code/esp/esp-idf-v4.1/components/spi_flash/Kconfig"
