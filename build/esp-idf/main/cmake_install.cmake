@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Charing/eclipse-workspace/test/main
+# Install script for directory: /Users/Charing/Code/esp_soft_ap/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

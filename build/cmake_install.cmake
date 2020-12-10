@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Charing/eclipse-workspace/test
+# Install script for directory: /Users/Charing/Code/esp_soft_ap
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/Charing/eclipse-workspace/test/build/esp-idf/cmake_install.cmake")
+  include("/Users/Charing/Code/esp_soft_ap/build/esp-idf/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/Charing/eclipse-workspace/test/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/Charing/Code/esp_soft_ap/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

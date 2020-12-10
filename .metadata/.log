@@ -1,0 +1,61 @@
+!SESSION 2020-12-09 17:08:21.607 -----------------------------------------------
+eclipse.buildId=4.17.0.I20200902-1800
+java.version=14.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -product org.eclipse.epp.package.cpp.product -keyring /Users/Charing/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.cpp.product -data /Users/Charing/Code/esp_soft_ap -product org.eclipse.epp.package.cpp.product -keyring /Users/Charing/.eclipse_keyring
+
+!ENTRY com.espressif.idf.ui 4 0 2020-12-09 17:09:31.496
+!MESSAGE Project cannot be created
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Invalid project description.
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:173)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:57)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:266)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:252)
+	at org.eclipse.tools.templates.freemarker.FMProjectGenerator.createProject(FMProjectGenerator.java:83)
+	at org.eclipse.tools.templates.freemarker.FMProjectGenerator.generate(FMProjectGenerator.java:65)
+	at org.eclipse.cdt.cmake.core.CMakeProjectGenerator.generate(CMakeProjectGenerator.java:58)
+	at com.espressif.idf.ui.templates.IDFProjectGenerator.generate(IDFProjectGenerator.java:65)
+	at org.eclipse.tools.templates.ui.TemplateWizard$1.execute(TemplateWizard.java:95)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+Contains: OK
+Contains: /Users/Charing/Code/esp_soft_ap overlaps the workspace location: /Users/Charing/Code/esp_soft_ap
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2020-12-09 17:09:31.497
+!MESSAGE Invalid project description.
+!SUBENTRY 2 unknown 0 0 2020-12-09 17:09:31.497
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2020-12-09 17:09:31.497
+!MESSAGE /Users/Charing/Code/esp_soft_ap overlaps the workspace location: /Users/Charing/Code/esp_soft_ap
+
+!ENTRY com.espressif.idf.ui 4 0 2020-12-09 17:09:48.901
+!MESSAGE Project cannot be created
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Invalid project description.
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:173)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:57)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:266)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:252)
+	at org.eclipse.tools.templates.freemarker.FMProjectGenerator.createProject(FMProjectGenerator.java:83)
+	at org.eclipse.tools.templates.freemarker.FMProjectGenerator.generate(FMProjectGenerator.java:65)
+	at org.eclipse.cdt.cmake.core.CMakeProjectGenerator.generate(CMakeProjectGenerator.java:58)
+	at com.espressif.idf.ui.templates.IDFProjectGenerator.generate(IDFProjectGenerator.java:65)
+	at org.eclipse.tools.templates.ui.TemplateWizard$1.execute(TemplateWizard.java:95)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+Contains: OK
+Contains: /Users/Charing/Code/esp_soft_ap overlaps the workspace location: /Users/Charing/Code/esp_soft_ap
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2020-12-09 17:09:48.902
+!MESSAGE Invalid project description.
+!SUBENTRY 2 unknown 0 0 2020-12-09 17:09:48.902
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2020-12-09 17:09:48.902
+!MESSAGE /Users/Charing/Code/esp_soft_ap overlaps the workspace location: /Users/Charing/Code/esp_soft_ap

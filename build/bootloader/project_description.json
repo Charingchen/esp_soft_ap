@@ -1,8 +1,8 @@
 {
     "project_name":       "bootloader",
     "project_path":       "/Users/Charing/Code/esp/esp-idf-v4.1/components/bootloader/subproject",
-    "build_dir":          "/Users/Charing/eclipse-workspace/test/build/bootloader",
-    "config_file":        "/Users/Charing/eclipse-workspace/test/sdkconfig",
+    "build_dir":          "/Users/Charing/Code/esp_soft_ap/build/bootloader",
+    "config_file":        "/Users/Charing/Code/esp_soft_ap/sdkconfig",
     "config_defaults":    "",
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",

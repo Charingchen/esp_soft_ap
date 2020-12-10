@@ -1298,7 +1298,7 @@ rule CXX_STATIC_LIBRARY_LINKER____idf_main
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Users/Charing/.espressif/tools/cmake/3.13.4/CMake.app/Contents/bin/cmake -S/Users/Charing/eclipse-workspace/test -B/Users/Charing/eclipse-workspace/test/build
+  command = /Users/Charing/.espressif/tools/cmake/3.13.4/CMake.app/Contents/bin/cmake -S/Users/Charing/Code/esp_soft_ap -B/Users/Charing/Code/esp_soft_ap/build
   description = Re-running CMake...
   generator = 1
 

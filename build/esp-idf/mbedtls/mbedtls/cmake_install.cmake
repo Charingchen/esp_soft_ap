@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/Charing/eclipse-workspace/test/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
-  include("/Users/Charing/eclipse-workspace/test/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("/Users/Charing/Code/esp_soft_ap/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
+  include("/Users/Charing/Code/esp_soft_ap/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
 
 endif()
 

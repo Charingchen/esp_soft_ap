@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/Charing/eclipse-workspace/test/build/bootloader/esp-idf/cmake_install.cmake")
+  include("/Users/Charing/Code/esp_soft_ap/build/bootloader/esp-idf/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/Charing/eclipse-workspace/test/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/Charing/Code/esp_soft_ap/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
