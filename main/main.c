@@ -28,17 +28,19 @@
 
 #define SSID "ESP32AP"
 //#define customIp ((u32_t)0xC0A80103UL) //102.168.1.3
-#define CMD 99
+#define CMD 99 // char "c"
 #define EN_SCAN 49 //(int)"1"
 #define EN_TX 50//(int)"2"
 #define RECV_PSWD 51//(int)"3"
 
-static const char* TAG = "SOFTAP";
+static const char* TAG = "ESP WIFI provision";
 static EventGroupHandle_t wifi_event_group;
 #define LISTENQ 2
 #define CMD_RECEIVED  "CMD received!"
 #define SEND_FAIL  "Got NO CMD!"
 
+/* FreeRTOS event group to signal when we are connected & ready to make a request */
+static EventGroupHandle_t s_wifi_event_group;
 
 const int CLIENT_CONNECTED_BIT = BIT0;
 const int CLIENT_DISCONNECTED_BIT = BIT1;
@@ -52,14 +54,16 @@ int ready_send = 0;
 //initial AP count value
 uint16_t apCount = 0;
 
+/** Smartconfig event declarations */
+typedef enum {
+    SC_EVENT_SCAN_DONE,                /*!< ESP32 station smartconfig has finished to scan for APs */
+    SC_EVENT_FOUND_CHANNEL,            /*!< ESP32 station smartconfig has found the channel of the target AP */
+    SC_EVENT_GOT_SSID_PSWD,            /*!< ESP32 station smartconfig got the SSID and password */
+    SC_EVENT_SEND_ACK_DONE,            /*!< ESP32 station smartconfig has sent ACK to cellphone */
+} smartconfig_event_t;
 
-// Wifi Scan initial config
-	   wifi_scan_config_t scanConf = {
-	      .ssid = NULL,
-	      .bssid = NULL,
-	      .channel = 0,
-	      .show_hidden = true
-	   };
+/** @brief smartconfig event base declaration */
+ESP_EVENT_DECLARE_BASE(SC_EVENT);
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
@@ -118,23 +122,23 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
     return ESP_OK;
 }
 
-static void start_dhcp_server(){
-
-    	// initialize the tcp stack
-	    tcpip_adapter_init();
-        // stop DHCP server
-        ESP_ERROR_CHECK(tcpip_adapter_dhcps_stop(TCPIP_ADAPTER_IF_AP));
-        // assign a static IP to the network interface
-        tcpip_adapter_ip_info_t info;
-        memset(&info, 0, sizeof(info));
-        IP4_ADDR(&info.ip, 192, 168, 1, 1);
-        IP4_ADDR(&info.gw, 192, 168, 1, 1);//ESP acts as router, so gw addr will be its own addr
-        IP4_ADDR(&info.netmask, 255, 255, 255, 0);
-        ESP_ERROR_CHECK(tcpip_adapter_set_ip_info(TCPIP_ADAPTER_IF_AP, &info));
-        // start the DHCP server
-        ESP_ERROR_CHECK(tcpip_adapter_dhcps_start(TCPIP_ADAPTER_IF_AP));
-        printf("DHCP server started \n");
-}
+//static void start_dhcp_server(){
+//
+//    	// initialize the tcp stack
+//	    tcpip_adapter_init();
+//        // stop DHCP server
+//        ESP_ERROR_CHECK(tcpip_adapter_dhcps_stop(TCPIP_ADAPTER_IF_AP));
+//        // assign a static IP to the network interface
+//        tcpip_adapter_ip_info_t info;
+//        memset(&info, 0, sizeof(info));
+//        IP4_ADDR(&info.ip, 192, 168, 1, 1);
+//        IP4_ADDR(&info.gw, 192, 168, 1, 1);//ESP acts as router, so gw addr will be its own addr
+//        IP4_ADDR(&info.netmask, 255, 255, 255, 0);
+//        ESP_ERROR_CHECK(tcpip_adapter_set_ip_info(TCPIP_ADAPTER_IF_AP, &info));
+//        // start the DHCP server
+//        ESP_ERROR_CHECK(tcpip_adapter_dhcps_start(TCPIP_ADAPTER_IF_AP));
+//        printf("DHCP server started \n");
+//}
 
 void printStationList()
 {
@@ -165,15 +169,32 @@ void printStationList()
 static void wifi_init(void)
 {
 
-	wifi_event_group = xEventGroupCreate();
-	ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
+//	wifi_event_group = xEventGroupCreate();
+//	ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
+//	wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+//	ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
+//	ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
+//	ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_APSTA) );
+//
+//    ESP_ERROR_CHECK( esp_wifi_start() );
+//    printf("ESP WiFi started in APSTA mode \n");
+
+    ESP_ERROR_CHECK(esp_netif_init());
+	s_wifi_event_group = xEventGroupCreate();
+	ESP_ERROR_CHECK(esp_event_loop_create_default());
+	esp_netif_t *sta_netif = esp_netif_create_default_wifi_sta();
+	assert(sta_netif);
+
 	wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
 	ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
-	ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
-	ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_APSTA) );
 
-    ESP_ERROR_CHECK( esp_wifi_start() );
-    printf("ESP WiFi started in APSTA mode \n");
+	ESP_ERROR_CHECK( esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL) );
+	ESP_ERROR_CHECK( esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &event_handler, NULL) );
+	ESP_ERROR_CHECK( esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL) );
+
+	ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
+	ESP_ERROR_CHECK( esp_wifi_start() );
+
 }
 
 void print_sta_info(void *pvParam){
@@ -310,11 +331,17 @@ int cmd_detection(const char* input) {
 //		 return -1;
 //	}
 
-	if (input[0] == CMD) {
+	if (input[0] != CMD) {
+		printf("\n Unknown CMD\n");
+		return 0;
+	}
+
+	else{
+
 		switch (input[1]) {
 		case EN_SCAN:
 			printf("\nStart WIFI scan\n");
-			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));
+//			ESP_ERROR_CHECK(esp_wifi_scan_start(&scanConf, true));
 			ready_send=0;
 			//scan_done = 0;
 			break;
@@ -395,10 +422,10 @@ int cmd_detection(const char* input) {
 				printf("scan_done: %i", scan_done);
 			}
 		}
+		// Return 1 indicate "c" is received and cmd is received
 		return 1;
 	}
-	printf("\n Unknown CMD\n");
-	return 0;
+
 }
 
 
@@ -450,12 +477,12 @@ void tcp_server(void *pvParam){
             //detect the end of message
             fcntl(cs,F_SETFL,O_NONBLOCK);
 
-
+            // need to do keep Reading until get the message catch logic
             do {
                 bzero(recv_buf, sizeof(recv_buf));
                 r = recv(cs, recv_buf, sizeof(recv_buf)-1,0);
 
-                // need to do keep receiving until get the message catch logic
+
                 if (r>0){
                 	if (cmd_detection(recv_buf) ==1){
                 		cmd_recv = 1;
@@ -470,9 +497,9 @@ void tcp_server(void *pvParam){
             ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
 
             if (cmd_recv == 1){
-            	if ( ready_send == 1){
-            		if( write(cs ,info_tosend , strlen(info_tosend)) < 0)
-					{
+            	// If the cmd is recieved and out going message is ready
+            	if (ready_send == 1){
+            		if( write(cs ,info_tosend , strlen(info_tosend)) < 0){
 						ESP_LOGE(TAG, "... Send failed \n");
 						close(s);
 						vTaskDelay(4000 / portTICK_PERIOD_MS);
@@ -528,7 +555,7 @@ void app_main(void)
 	 ESP_LOGI(TAG, "[APP] Free memory: %d bytes", esp_get_free_heap_size());
 	 ESP_LOGI(TAG, "[APP] IDF version: %s", esp_get_idf_version());
 	 nvs_flash_init();
-	 start_dhcp_server();
+//	 start_dhcp_server();
 	 wifi_init();
 	 xTaskCreate(&tcp_server,"tcp_server",4096,NULL,5,&xtcp_server_handle);
 	 xTaskCreate(&print_sta_info,"print_sta_info",4096,NULL,5,NULL);
