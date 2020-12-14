@@ -2,7 +2,7 @@
 #include "esp_wifi.h"
 #include "esp_system.h"
 #include "esp_event.h"
-#include "esp_event_loop.h"
+//#include "esp_event_loop.h"
 #include "nvs_flash.h"
 #include "driver/gpio.h"
 
@@ -42,7 +42,7 @@ static EventGroupHandle_t wifi_event_group;
 /* FreeRTOS event group to signal when we are connected & ready to make a request */
 static EventGroupHandle_t s_wifi_event_group;
 
-const int CLIENT_CONNECTED_BIT = BIT0;
+const int CONNECTED_BIT = BIT0;
 const int CLIENT_DISCONNECTED_BIT = BIT1;
 const int AP_STARTED_BIT = BIT2;
 
@@ -64,6 +64,49 @@ typedef enum {
 
 /** @brief smartconfig event base declaration */
 ESP_EVENT_DECLARE_BASE(SC_EVENT);
+
+static void provision_event_handler(void* arg, esp_event_base_t event_base,
+                                int32_t event_id, void* event_data)
+{
+	// When esp_wifi started without error, Run the main task to do the provision
+    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
+    	xTaskCreate(&tcp_server,"tcp_server",4096,NULL,5,&xtcp_server_handle);
+    }
+    // Rainy Day handler. Detail description check out:
+    // https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/wifi.html?highlight=wifi_event_sta_disconnected#wifi-event-sta-disconnected
+    else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
+        esp_wifi_connect();
+        xEventGroupClearBits(s_wifi_event_group, CONNECTED_BIT);
+    }
+
+    // Handle if there is a station connects to us
+    else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_STACONNECTED){
+    	wifi_event_ap_staconnected_t* event = (wifi_event_ap_staconnected_t*) event_data;
+		ESP_LOGI(TAG, "station "MACSTR" join, AID=%d",
+				 MAC2STR(event->mac), event->aid);
+    }
+    // Handle if the connected station is disconnected
+    else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_STADISCONNECTED){
+    	wifi_event_ap_stadisconnected_t* event = (wifi_event_ap_stadisconnected_t*) event_data;
+		ESP_LOGI(TAG, "station "MACSTR" leave, AID=%d",
+				 MAC2STR(event->mac), event->aid);
+    }
+    // Indication of when DHCP server assign an IP to the station
+    else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
+        xEventGroupSetBits(s_wifi_event_group, CONNECTED_BIT);
+    }
+
+
+    else if (event_base == SC_EVENT && event_id == SC_EVENT_SCAN_DONE) {
+        ESP_LOGI(TAG, "Scan done");
+    } else if (event_base == SC_EVENT && event_id == SC_EVENT_FOUND_CHANNEL) {
+        ESP_LOGI(TAG, "Found channel");
+    } else if (event_base == SC_EVENT && event_id == SC_EVENT_GOT_SSID_PSWD) {
+        ESP_LOGI(TAG, "Got SSID and password");
+    }
+
+
+}
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
@@ -140,31 +183,31 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 //        printf("DHCP server started \n");
 //}
 
-void printStationList()
-{
-	printf(" Connected stations:\n");
-	printf("--------------------------------------------------\n");
-
-	wifi_sta_list_t wifi_sta_list;
-	tcpip_adapter_sta_list_t adapter_sta_list;
-
-	memset(&wifi_sta_list, 0, sizeof(wifi_sta_list));
-	memset(&adapter_sta_list, 0, sizeof(adapter_sta_list));
-
-	ESP_ERROR_CHECK(esp_wifi_ap_get_sta_list(&wifi_sta_list));
-	ESP_ERROR_CHECK(tcpip_adapter_get_sta_list(&wifi_sta_list, &adapter_sta_list));
-
-	for(int i = 0; i < adapter_sta_list.num; i++) {
-
-		tcpip_adapter_sta_info_t station = adapter_sta_list.sta[i];
-         printf("%d - mac: %.2x:%.2x:%.2x:%.2x:%.2x:%.2x - IP: %s\n", i + 1,
-				station.mac[0], station.mac[1], station.mac[2],
-				station.mac[3], station.mac[4], station.mac[5],
-				ip4addr_ntoa(&(station.ip)));
-	}
-
-	printf("\n");
-}
+//void printStationList()
+//{
+//	printf(" Connected stations:\n");
+//	printf("--------------------------------------------------\n");
+//
+//	wifi_sta_list_t wifi_sta_list;
+//	tcpip_adapter_sta_list_t adapter_sta_list;
+//
+//	memset(&wifi_sta_list, 0, sizeof(wifi_sta_list));
+//	memset(&adapter_sta_list, 0, sizeof(adapter_sta_list));
+//
+//	ESP_ERROR_CHECK(esp_wifi_ap_get_sta_list(&wifi_sta_list));
+//	ESP_ERROR_CHECK(tcpip_adapter_get_sta_list(&wifi_sta_list, &adapter_sta_list));
+//
+//	for(int i = 0; i < adapter_sta_list.num; i++) {
+//
+//		tcpip_adapter_sta_info_t station = adapter_sta_list.sta[i];
+//         printf("%d - mac: %.2x:%.2x:%.2x:%.2x:%.2x:%.2x - IP: %s\n", i + 1,
+//				station.mac[0], station.mac[1], station.mac[2],
+//				station.mac[3], station.mac[4], station.mac[5],
+//				ip4addr_ntoa(&(station.ip)));
+//	}
+//
+//	printf("\n");
+//}
 
 static void wifi_init(void)
 {
@@ -188,24 +231,24 @@ static void wifi_init(void)
 	wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
 	ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
 
-	ESP_ERROR_CHECK( esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL) );
-	ESP_ERROR_CHECK( esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &event_handler, NULL) );
-	ESP_ERROR_CHECK( esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL) );
+	ESP_ERROR_CHECK( esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &provision_event_handler, NULL) );
+	ESP_ERROR_CHECK( esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &provision_event_handler, NULL) );
+	ESP_ERROR_CHECK( esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &provision_event_handler, NULL) );
 
 	ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
 	ESP_ERROR_CHECK( esp_wifi_start() );
 
 }
 
-void print_sta_info(void *pvParam){
-    printf("print_sta_info task started \n");
-    while(1) {
-		EventBits_t staBits = xEventGroupWaitBits(wifi_event_group, CLIENT_CONNECTED_BIT | CLIENT_CONNECTED_BIT, pdTRUE, pdFALSE, portMAX_DELAY);
-		if((staBits & CLIENT_CONNECTED_BIT) != 0) printf("New station connected\n\n");
-        else printf("A station disconnected\n\n");
-        printStationList();
-	}
-}
+//void print_sta_info(void *pvParam){
+//    printf("print_sta_info task started \n");
+//    while(1) {
+//		EventBits_t staBits = xEventGroupWaitBits(wifi_event_group, CLIENT_CONNECTED_BIT | CLIENT_CONNECTED_BIT, pdTRUE, pdFALSE, portMAX_DELAY);
+//		if((staBits & CLIENT_CONNECTED_BIT) != 0) printf("New station connected\n\n");
+//        else printf("A station disconnected\n\n");
+//        printStationList();
+//	}
+//}
 
 /*
  * ESP32 ICMP Echo
@@ -557,9 +600,8 @@ void app_main(void)
 	 nvs_flash_init();
 //	 start_dhcp_server();
 	 wifi_init();
-	 xTaskCreate(&tcp_server,"tcp_server",4096,NULL,5,&xtcp_server_handle);
-	 xTaskCreate(&print_sta_info,"print_sta_info",4096,NULL,5,NULL);
-
+//	 xTaskCreate(&tcp_server,"tcp_server",4096,NULL,5,&xtcp_server_handle);
+//	 xTaskCreate(&print_sta_info,"print_sta_info",4096,NULL,5,NULL);
 
 // Create a task to do the scan when it needs to do it
 //	   while(true){

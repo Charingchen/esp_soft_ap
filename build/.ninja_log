@@ -934,3 +934,11 @@
 1298	4602	1607632215435667096	esp-idf/esp32/ld/esp32.project.ld	3c01c494cad85d84
 4602	8366	1607632219195594603	smart_config.elf	25776b819c00d0f9
 8366	9371	1607632220238211981	.bin_timestamp	8a3387e58114d1ff
+39	10960	1607651609169525032	build.ninja	70d64c58f4cef563
+100	372	0	esp-idf/partition_table/CMakeFiles/partition_table	9b7cad6637620a54
+373	439	1607563972014409362	bootloader-prefix/src/bootloader-stamp/bootloader-build	f53662c169bf6c66
+373	439	1607563972014409362	bootloader/bootloader.elf	f53662c169bf6c66
+373	439	1607563972014409362	bootloader/bootloader.bin	f53662c169bf6c66
+373	439	1607563972014409362	bootloader/bootloader.map	f53662c169bf6c66
+101	484	1607651609909468161	esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_app_desc.c.obj	a544bd336ec9f41c
+484	569	1607651609995652053	esp-idf/app_update/libapp_update.a	261b279aedc6ef5a
