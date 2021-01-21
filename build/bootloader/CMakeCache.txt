@@ -233,7 +233,7 @@ IDF_TARGET:STRING=esp32
 LEGACY_INCLUDE_COMMON_HEADERS:UNINITIALIZED=
 
 //No help, variable specified on the command line.
-PYTHON:UNINITIALIZED=python
+PYTHON:UNINITIALIZED=/Users/Charing/.espressif/python_env/idf4.1_py2.7_env/bin/python
 
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1

@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//No help, variable specified on the command line.
+CCACHE_ENABLE:UNINITIALIZED=0
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/Users/Charing/.espressif/tools/xtensa-esp32-elf/esp-2020r2-8.2.0/xtensa-esp32-elf/bin/xtensa-esp32-elf-ar
 
@@ -226,6 +229,9 @@ ENABLE_TESTING:BOOL=
 //Build mbed TLS with zlib library.
 ENABLE_ZLIB_SUPPORT:BOOL=OFF
 
+//No help, variable specified on the command line.
+ESP_PLATFORM:UNINITIALIZED=1
+
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
@@ -240,6 +246,9 @@ LINK_WITH_PTHREAD:BOOL=OFF
 
 //Path to a program.
 PERL_EXECUTABLE:FILEPATH=/usr/bin/perl
+
+//No help, variable specified on the command line.
+PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/Users/Charing/.espressif/python_env/idf4.1_py2.7_env/bin/python
