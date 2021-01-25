@@ -22,13 +22,16 @@
 #include "lwip/sys.h"
 #include <lwip/netdb.h>
 
+#include "ping/ping_sock.h"
+#include "ping/ping.h"
+
 /* FreeRTOS event group to signal when we are connected & ready to make a request */
 static EventGroupHandle_t s_wifi_event_group;
 
 // Self defined event group to control socket send and receiving read
 static EventGroupHandle_t socket_status;
-static const int SCAN_DONE = BIT2;
-static const int READY_TO_SEND = BIT3;
+//static const int SCAN_DONE = BIT2;
+//static const int READY_TO_SEND = BIT3;
 
 
 /* The event group allows multiple bits for each event,
@@ -44,6 +47,7 @@ static const char *TAG = "testing";
 #define EN_SCAN 49 //(int)"1"
 #define EN_TX 50//(int)"2"
 #define RECV_PSWD 51//(int)"3"
+#define CMD_RETRY "RETRY"
 
 #define CMD_RECEIVED  "CMD received!"
 #define SEND_FAIL  "Got NO CMD!"
@@ -68,8 +72,114 @@ ESP_EVENT_DECLARE_BASE(SC_EVENT);
 // Defind socket port for tcp server
 #define PORT 3333
 
+/*
+ * ESP32 ICMP Echo
+ * https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/protocols/icmp_echo.html
+ */
+static void cmd_ping_on_ping_success(esp_ping_handle_t hdl, void *args)
+{
+    uint8_t ttl;
+    uint16_t seqno;
+    uint32_t elapsed_time, recv_len;
+    ip_addr_t target_addr;
+    esp_ping_get_profile(hdl, ESP_PING_PROF_SEQNO, &seqno, sizeof(seqno));
+    esp_ping_get_profile(hdl, ESP_PING_PROF_TTL, &ttl, sizeof(ttl));
+    esp_ping_get_profile(hdl, ESP_PING_PROF_IPADDR, &target_addr, sizeof(target_addr));
+    esp_ping_get_profile(hdl, ESP_PING_PROF_SIZE, &recv_len, sizeof(recv_len));
+    esp_ping_get_profile(hdl, ESP_PING_PROF_TIMEGAP, &elapsed_time, sizeof(elapsed_time));
+    printf("%d bytes from %s icmp_seq=%d ttl=%d time=%d ms\n",
+           recv_len, ipaddr_ntoa((ip_addr_t*)&target_addr), seqno, ttl, elapsed_time);
+}
+
+static void cmd_ping_on_ping_timeout(esp_ping_handle_t hdl, void *args)
+{
+    uint16_t seqno;
+    ip_addr_t target_addr;
+    esp_ping_get_profile(hdl, ESP_PING_PROF_SEQNO, &seqno, sizeof(seqno));
+    esp_ping_get_profile(hdl, ESP_PING_PROF_IPADDR, &target_addr, sizeof(target_addr));
+    printf("From %s icmp_seq=%d timeout\n",ipaddr_ntoa((ip_addr_t*)&target_addr), seqno);
+}
+
+static void cmd_ping_on_ping_end(esp_ping_handle_t hdl, void *args)
+{
+    ip_addr_t target_addr;
+    uint32_t transmitted;
+    uint32_t received;
+    uint32_t total_time_ms;
+    esp_ping_get_profile(hdl, ESP_PING_PROF_REQUEST, &transmitted, sizeof(transmitted));
+    esp_ping_get_profile(hdl, ESP_PING_PROF_REPLY, &received, sizeof(received));
+    esp_ping_get_profile(hdl, ESP_PING_PROF_IPADDR, &target_addr, sizeof(target_addr));
+    esp_ping_get_profile(hdl, ESP_PING_PROF_DURATION, &total_time_ms, sizeof(total_time_ms));
+    uint32_t loss = (uint32_t)((1 - ((float)received) / transmitted) * 100);
+    if (IP_IS_V4(&target_addr)) {
+        printf("\n--- %s ping statistics ---\n", inet_ntoa(*ip_2_ip4(&target_addr)));
+    } else {
+        printf("\n--- %s ping statistics ---\n", inet6_ntoa(*ip_2_ip6(&target_addr)));
+    }
+    printf("%d packets transmitted, %d received, %d%% packet loss, time %dms\n",
+           transmitted, received, loss, total_time_ms);
+    // delete the ping sessions, so that we clean up all resources and can create a new ping session
+    // we don't have to call delete function in the callback, instead we can call delete function from other tasks
+    esp_ping_delete_session(hdl);
+}
+
+
+int ping_start()
+{
+	esp_ping_config_t config = ESP_PING_DEFAULT_CONFIG();
+
+
+	// parse IP address
+	struct sockaddr_in6 sock_addr6;
+	ip_addr_t target_addr;
+	memset(&target_addr, 0, sizeof(target_addr));
+	char *ping_target = "www.espressif.com";
+
+	if (inet_pton(AF_INET6, ping_target, &sock_addr6.sin6_addr) == 1) {
+		/* convert ip6 string to ip6 address */
+		ipaddr_aton(ping_target, &target_addr);
+	} else {
+		struct addrinfo hint;
+		struct addrinfo *res = NULL;
+		memset(&hint, 0, sizeof(hint));
+		/* convert ip4 string or hostname to ip4 or ip6 address */
+		if (getaddrinfo(ping_target, NULL, &hint, &res) != 0) {
+			printf("ping: unknown host %s\n", ping_target);
+			return 1;
+		}
+		if (res->ai_family == AF_INET) {
+			struct in_addr addr4 = ((struct sockaddr_in *) (res->ai_addr))->sin_addr;
+			inet_addr_to_ip4addr(ip_2_ip4(&target_addr), &addr4);
+		} else {
+			struct in6_addr addr6 = ((struct sockaddr_in6 *) (res->ai_addr))->sin6_addr;
+			inet6_addr_to_ip6addr(ip_2_ip6(&target_addr), &addr6);
+		}
+		freeaddrinfo(res);
+	}
+	config.target_addr = target_addr;
+
+	/* set callback functions */
+	esp_ping_callbacks_t cbs = {
+		.on_ping_success = cmd_ping_on_ping_success,
+		.on_ping_timeout = cmd_ping_on_ping_timeout,
+		.on_ping_end = cmd_ping_on_ping_end,
+		.cb_args = NULL
+	};
+	esp_ping_handle_t ping;
+	esp_ping_new_session(&config, &cbs, &ping);
+
+    ESP_LOGI(TAG, "Ping start");
+    ESP_ERROR_CHECK(esp_ping_start(ping));
+    ESP_LOGI(TAG, "Ping end");
+    return 0;
+
+}
+
+
 // Since we don't have Header file, you need declare before reference
 //static void cmd_dectection(void * parm);
+
+
 
 static void event_handler(void* arg, esp_event_base_t event_base,
                                 int32_t event_id, void* event_data)
@@ -93,7 +203,8 @@ static void event_handler(void* arg, esp_event_base_t event_base,
     else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_SCAN_DONE){
 		esp_wifi_scan_get_ap_num(&apCount);
 		printf("Number of access points found: %d\n",apCount);
-		xEventGroupSetBits(socket_status, SCAN_DONE);
+//		xEventGroupSetBits(socket_status, SCAN_DONE);
+		scan_done = 1;
 		printf("Scan Done");
 
       }
@@ -125,15 +236,16 @@ static void event_handler(void* arg, esp_event_base_t event_base,
         ESP_LOGI(TAG, "Found channel");
     } else if (event_base == SC_EVENT && event_id == SC_EVENT_GOT_SSID_PSWD) {
         ESP_LOGI(TAG, "Got SSID and password");
+        vTaskDelete(NULL); // Delete the TCP task
         wifi_config_t *wifi_config = (wifi_config_t*) event_data;
         printf("\n---Disconnecting\n");
-//		ESP_ERROR_CHECK(esp_wifi_disconnect());
-//		ESP_ERROR_CHECK( esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config) );
-//		ESP_ERROR_CHECK( esp_wifi_connect() );
-//
-//		ESP_LOGI(TAG, "Testing connection to ping espressif.com");
-//		//Try to ping espressif.com
-//		ping_start();
+		ESP_ERROR_CHECK(esp_wifi_disconnect());
+		ESP_ERROR_CHECK( esp_wifi_set_config(ESP_IF_WIFI_STA, wifi_config) );
+		ESP_ERROR_CHECK( esp_wifi_connect() );
+
+		ESP_LOGI(TAG, "Testing connection to ping espressif.com");
+		//Try to ping espressif.com
+		ping_start();
 
 
     } else if (event_base == SC_EVENT && event_id == SC_EVENT_SEND_ACK_DONE) {
@@ -168,7 +280,8 @@ static void initialise_wifi(void)
 static int cmd_dectection(char* input)
 {
 	char tempstring[100];
-	int sta_num = 10;
+	// If the sending 10 station info would trigger watchdog timeout somehow
+	int sta_num = 2;
 	char start_msg[5];
 	char *start, *seperator;
 
@@ -180,7 +293,8 @@ static int cmd_dectection(char* input)
 	sprintf(start_msg, "%i#", sta_num);
 	strcpy(info_tosend, start_msg);
 
-	xEventGroupClearBits(socket_status, READY_TO_SEND);
+//	xEventGroupClearBits(socket_status, READY_TO_SEND);
+	ready_send = 0;
 	if (input[0] != CMD) {
 		printf("\n Unknown CMD\n");
 		return 0;
@@ -191,48 +305,58 @@ static int cmd_dectection(char* input)
 		switch (input[1]) {
 		case EN_SCAN:
 			printf("\nStart WIFI scan\n");
+			scan_done = 0;
 			ESP_ERROR_CHECK(esp_wifi_scan_start(NULL, true));
-//			break;
-//		case EN_TX:
-			xEventGroupWaitBits(socket_status,SCAN_DONE,false,true,portMAX_DELAY);
-			ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
-			for (int i=0; i<sta_num; i++) {
-			   char *authmode;
-			   switch(list[i].authmode) {
-				  case WIFI_AUTH_OPEN:
-					 authmode = "WIFI_AUTH_OPEN";
-					 break;
-				  case WIFI_AUTH_WEP:
-					 authmode = "WIFI_AUTH_WEP";
-					 break;
-				  case WIFI_AUTH_WPA_PSK:
-					 authmode = "WIFI_AUTH_WPA_PSK";
-					 break;
-				  case WIFI_AUTH_WPA2_PSK:
-					 authmode = "WIFI_AUTH_WPA2_PSK";
-					 break;
-				  case WIFI_AUTH_WPA_WPA2_PSK:
-					 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
-					 break;
-				  default:
-					 authmode = "Unknown";
-					 break;
-			   }
-			   sprintf(tempstring,"SSID:%s.RSSI:%3d.Authmode: %s.\n",list[i].ssid, list[i].rssi, authmode);
-			   printf(tempstring);
-			   strcat(info_tosend, tempstring);
-
-			}
-			printf("info_tosend:\n");
-			printf(info_tosend);
-//			free(list);
-			printf("\nSelect WIFI and start the SSID password transmitting\n");
-			xEventGroupSetBits(socket_status, READY_TO_SEND);
-			ESP_LOGI(TAG,"Select WIFI and start the SSID password transmitting\n");
 			break;
+		case EN_TX:
+			if (scan_done == 0){
+				return 2; // Indicate re-try the same command since the scan is not down
+			}
+			else{
+//				xEventGroupWaitBits(socket_status,SCAN_DONE,false,true,portMAX_DELAY);
+				ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
+				for (int i=0; i<sta_num; i++) {
+				   char *authmode;
+				   switch(list[i].authmode) {
+					  case WIFI_AUTH_OPEN:
+						 authmode = "WIFI_AUTH_OPEN";
+						 break;
+					  case WIFI_AUTH_WEP:
+						 authmode = "WIFI_AUTH_WEP";
+						 break;
+					  case WIFI_AUTH_WPA_PSK:
+						 authmode = "WIFI_AUTH_WPA_PSK";
+						 break;
+					  case WIFI_AUTH_WPA2_PSK:
+						 authmode = "WIFI_AUTH_WPA2_PSK";
+						 break;
+					  case WIFI_AUTH_WPA_WPA2_PSK:
+						 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
+						 break;
+					  default:
+						 authmode = "Unknown";
+						 break;
+				   }
+				   sprintf(tempstring,"SSID:%s.RSSI:%3d.Authmode: %s.\n",list[i].ssid, list[i].rssi, authmode);
+				   printf(tempstring);
+				   strcat(info_tosend, tempstring);
+
+				}
+//				info_tosend = "";
+				printf("info_tosend:\n");
+				printf(info_tosend);
+//				free(list);
+//				printf("\nSelect WIFI and start the SSID password transmitting\n");
+//				xEventGroupSetBits(socket_status, READY_TO_SEND);
+				ready_send = 1;
+				ESP_LOGI(TAG,"Select WIFI and start the SSID password transmitting\n");
+				break;
+			}
+
 
 		case RECV_PSWD:
 			//deleting TCP task to stop sending and receiving cmd
+//			vTaskDelete(NULL);
 			//pointer to the password portion of the input
 
 			start = strstr(input,"ssid:")+5;
@@ -284,45 +408,59 @@ static void send_via_socket (const int sock, const char* send_buffer)
 	int len = strlen(send_buffer);
 	printf("\nsend len %d\nSend_buffer:",len);
 	printf(send_buffer);
-	int to_write = len;
-	while (to_write > 0) {
-		int written = send(sock, send_buffer + (len - to_write), to_write, 0);
-		if (written < 0) {
-			ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
-		}
-		to_write -= written;
-		printf("\nto_write:%d\n",to_write);
-	}
-	return;
+	send(sock, send_buffer,len, 0);
+//	int to_write = len;
+//	while (to_write > 0) {
+//		int written = send(sock, send_buffer + (len - to_write), to_write, 0);
+//		if (written < 0) {
+//			ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+//		}
+//		to_write -= written;
+//		printf("\nto_write:%d\n",to_write);
+//	}
 }
 
 static void do_retransmit(const int sock)
 {
-    int len;
+    int len,cmd_ret;
     char rx_buffer[128];
+//    char* sending_buffer = "2#SSID:TELUS17F7.RSSI:-31.Authmode: WIFI_AUTH_WPA2_PSK.\nSSID:TELUS0129.RSSI:-50.Authmode: WIFI_AUTH_WPA2_PSK.\n";
 
     do {
         len = recv(sock, rx_buffer, sizeof(rx_buffer) - 1, 0);
         if (len < 0) {
-            ESP_LOGE(TAG, "Error occurred during receiving: errno %d", errno);
+            ESP_LOGE("SOCKET", "Error occurred during receiving: errno %d", errno);
         } else if (len == 0) {
-            ESP_LOGW(TAG, "Connection closed");
+            ESP_LOGW("SOCKET", "Connection closed");
         } else {
             rx_buffer[len] = 0; // Null-terminate whatever is received and treat it like a string
-            ESP_LOGI(TAG, "Received %d bytes: %s", len, rx_buffer);
+            ESP_LOGI("SOCKET", "Received %d bytes: %s", len, rx_buffer);
             // uses if ready then send else skip
-            if (cmd_dectection(rx_buffer)== 1){
-            	// change it back two steps
+            cmd_ret = cmd_dectection(rx_buffer);
+            if (cmd_ret== 1){
+            	if (ready_send == 1){
+            		send_via_socket(sock,info_tosend);
+					ESP_LOGI("SOCKET", "Done sending....");
+            	}
+            	else{
+            		ESP_LOGI("SOCKET", "SKIP SENDING");
+            	}
 
-            	xEventGroupWaitBits(socket_status,READY_TO_SEND,true,true,portMAX_DELAY);
-            	send_via_socket(sock,info_tosend);
-            	ESP_LOGI(TAG, "Done sending....");
-            	break;
+             }
+            else if(cmd_ret == 2){
+				send_via_socket(sock,CMD_RETRY);
+				ESP_LOGI("SOCKET", "Sending Retry CMD....");
             }
-        }
+            else{
+             	ESP_LOGI("SOCKET", "CMD not recognized....");
+             }
+            break;
+
+            }
     } while (len > 0);
     printf("Exiting while loop\n");
-    return;
+
+
 }
 
 static void tcp_server_task(void *pvParameters)
@@ -349,7 +487,7 @@ static void tcp_server_task(void *pvParameters)
     if (listen_sock < 0) {
         ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
         vTaskDelete(NULL);
-        return;
+
     }
 #if defined(CONFIG_EXAMPLE_IPV4) && defined(CONFIG_EXAMPLE_IPV6)
     // Note that by default IPV6 binds to both protocols, it is must be disabled
