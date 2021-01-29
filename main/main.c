@@ -30,7 +30,7 @@ static EventGroupHandle_t s_wifi_event_group;
 
 // Self defined event group to control socket send and receiving read
 static EventGroupHandle_t socket_status;
-//static const int SCAN_DONE = BIT2;
+static const int SOCKET_CLOSED = BIT2;
 //static const int READY_TO_SEND = BIT3;
 
 
@@ -55,19 +55,25 @@ static const char *TAG = "testing";
 int scan_done = 0;
 char* info_tosend;
 int ready_send = 0;
+int socket_pause = 0;
+
+static TaskHandle_t tcp_task_handle;
+
 //initial AP count value
 uint16_t apCount = 0;
 
 /** event declarations */
 typedef enum {
     SC_EVENT_SCAN_DONE,                /*!< ESP32 station smartconfig has finished to scan for APs */
-    SC_EVENT_FOUND_CHANNEL,            /*!< ESP32 station smartconfig has found the channel of the target AP */
+    SC_EVENT_START_SCAN,            /*!< ESP32 station smartconfig has found the channel of the target AP */
     SC_EVENT_GOT_SSID_PSWD,            /*!< ESP32 station smartconfig got the SSID and password */
     SC_EVENT_SEND_ACK_DONE,            /*!< ESP32 station smartconfig has sent ACK to cellphone */
 } event_t;
 
 /** @brief smartconfig event base declaration. It will go look for "SC_EVENT_**" in the enum defination*/
 ESP_EVENT_DECLARE_BASE(SC_EVENT);
+
+esp_event_loop_handle_t sc_event_handle;
 
 // Defind socket port for tcp server
 #define PORT 3333
@@ -176,11 +182,6 @@ int ping_start()
 }
 
 
-// Since we don't have Header file, you need declare before reference
-//static void cmd_dectection(void * parm);
-
-
-
 static void event_handler(void* arg, esp_event_base_t event_base,
                                 int32_t event_id, void* event_data)
 {
@@ -204,8 +205,52 @@ static void event_handler(void* arg, esp_event_base_t event_base,
 		esp_wifi_scan_get_ap_num(&apCount);
 		printf("Number of access points found: %d\n",apCount);
 //		xEventGroupSetBits(socket_status, SCAN_DONE);
-		scan_done = 1;
+//		scan_done = 1;
 		printf("Scan Done");
+		socket_pause = 0;
+		vTaskResume(tcp_task_handle);
+
+		char tempstring[100];
+		// If the sending 10 station info would trigger watchdog timeout somehow
+		int sta_num = 10;
+		char start_msg[5];
+		wifi_ap_record_t list[10];
+
+		info_tosend = (char *) malloc(sizeof(tempstring) * (sta_num + 1) + 8);
+		//add number of station transmitting to the string
+		sprintf(start_msg, "%i#", sta_num);
+		strcpy(info_tosend, start_msg);
+		ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
+		for (int i=0; i<sta_num; i++) {
+		   char *authmode;
+		   switch(list[i].authmode) {
+			  case WIFI_AUTH_OPEN:
+				 authmode = "WIFI_AUTH_OPEN";
+				 break;
+			  case WIFI_AUTH_WEP:
+				 authmode = "WIFI_AUTH_WEP";
+				 break;
+			  case WIFI_AUTH_WPA_PSK:
+				 authmode = "WIFI_AUTH_WPA_PSK";
+				 break;
+			  case WIFI_AUTH_WPA2_PSK:
+				 authmode = "WIFI_AUTH_WPA2_PSK";
+				 break;
+			  case WIFI_AUTH_WPA_WPA2_PSK:
+				 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
+				 break;
+			  default:
+				 authmode = "Unknown";
+				 break;
+		   }
+		   sprintf(tempstring,"SSID:%s.RSSI:%3d.Authmode: %s.\n",list[i].ssid, list[i].rssi, authmode);
+		   printf(tempstring);
+		   strcat(info_tosend, tempstring);
+
+		}
+		printf("info_tosend:\n");
+		printf(info_tosend);
+		ready_send = 1;
 
       }
 //        else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
@@ -226,16 +271,21 @@ static void event_handler(void* arg, esp_event_base_t event_base,
 			 MAC2STR(event->mac), event->aid);
    }
 
-
-
-
     // self defined events to go through
-    else if (event_base == SC_EVENT && event_id == SC_EVENT_SCAN_DONE) {
-        ESP_LOGI(TAG, "Scan done");
-    } else if (event_base == SC_EVENT && event_id == SC_EVENT_FOUND_CHANNEL) {
-        ESP_LOGI(TAG, "Found channel");
-    } else if (event_base == SC_EVENT && event_id == SC_EVENT_GOT_SSID_PSWD) {
-        ESP_LOGI(TAG, "Got SSID and password");
+	else if (event_base == SC_EVENT && event_id == SC_EVENT_START_SCAN) {
+        ESP_LOGI("SC_EVENT", "Start Scan...");
+        scan_done = 0;
+        xEventGroupWaitBits(socket_status,SOCKET_CLOSED,true,false,portMAX_DELAY);
+        vTaskSuspend(tcp_task_handle);
+        ESP_LOGI("SC_EVENT", "TCP_task suspend");
+        ESP_ERROR_CHECK(esp_wifi_scan_start(NULL, true));
+
+    }
+//    else if (event_base == SC_EVENT && event_id == SC_EVENT_FOUND_CHANNEL) {
+//        ESP_LOGI("SC_EVENT", "Found channel");
+//    }
+    else if (event_base == SC_EVENT && event_id == SC_EVENT_GOT_SSID_PSWD) {
+        ESP_LOGI("SC_EVENT", "Got SSID and password");
         vTaskDelete(NULL); // Delete the TCP task
         wifi_config_t *wifi_config = (wifi_config_t*) event_data;
         printf("\n---Disconnecting\n");
@@ -249,7 +299,7 @@ static void event_handler(void* arg, esp_event_base_t event_base,
 
 
     } else if (event_base == SC_EVENT && event_id == SC_EVENT_SEND_ACK_DONE) {
-//        xEventGroupSetBits(s_wifi_event_group, ESPTOUCH_DONE_BIT);
+    	ESP_LOGI("SC_EVENT", "SC EVENT send ack done");
     }
 }
 
@@ -258,6 +308,18 @@ static void initialise_wifi(void)
     ESP_ERROR_CHECK(esp_netif_init());
     s_wifi_event_group = xEventGroupCreate();
     socket_status = xEventGroupCreate();
+
+
+//    esp_event_loop_args_t sc_loop_args = {
+//    		.queue_size = 5,
+//			.task_name = "sc_loop_task", // task will be created
+//			.task_priority = uxTaskPriorityGet(NULL),
+//			.task_stack_size = 1028,
+//			.task_core_id = tskNO_AFFINITY
+//        };
+//    ESP_ERROR_CHECK(esp_event_loop_create(&sc_loop_args, &sc_event_handle));
+
+
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     // New netif has to do create both instance using ap and sta if using softap
     esp_netif_create_default_wifi_ap();
@@ -269,7 +331,10 @@ static void initialise_wifi(void)
 
     ESP_ERROR_CHECK( esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL) );
     ESP_ERROR_CHECK( esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &event_handler, NULL) );
+
+    // To use the default event loop, need to use register not with. Custom loop arug and loop create would give me stack overflow on the task loop somehow
     ESP_ERROR_CHECK( esp_event_handler_register(SC_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL) );
+//    ESP_ERROR_CHECK( esp_event_handler_register_with(sc_event_handle,SC_EVENT, ESP_EVENT_ANY_ID, &event_handler, NULL) );
 
     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_APSTA) );
 
@@ -287,7 +352,7 @@ static int cmd_dectection(char* input)
 
 //	wifi_ap_record_t *list = (wifi_ap_record_t *) malloc(
 //			sizeof(wifi_ap_record_t) * apCount);
-	wifi_ap_record_t list[10];
+//	wifi_ap_record_t list[10];
 	info_tosend = (char *) malloc(sizeof(tempstring) * (sta_num + 1) + 8);
 	//add number of station transmitting to the string
 	sprintf(start_msg, "%i#", sta_num);
@@ -304,52 +369,55 @@ static int cmd_dectection(char* input)
 
 		switch (input[1]) {
 		case EN_SCAN:
-			printf("\nStart WIFI scan\n");
-			scan_done = 0;
-			ESP_ERROR_CHECK(esp_wifi_scan_start(NULL, true));
+			ESP_LOGI("CMD Detect","Start WIFI scan\n");
+			int data = 0;
+			ESP_ERROR_CHECK(esp_event_post(SC_EVENT, SC_EVENT_START_SCAN, &data, sizeof(data), portMAX_DELAY));
+			ESP_LOGI("CMD Detect","Event Posted\n");
+//			scan_done = 0;
+//			ESP_ERROR_CHECK(esp_wifi_scan_start(NULL, true));
 			break;
 		case EN_TX:
-			if (scan_done == 0){
+			if (scan_done == 0 && ready_send == 0){
 				return 2; // Indicate re-try the same command since the scan is not down
 			}
 			else{
-//				xEventGroupWaitBits(socket_status,SCAN_DONE,false,true,portMAX_DELAY);
-				ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
-				for (int i=0; i<sta_num; i++) {
-				   char *authmode;
-				   switch(list[i].authmode) {
-					  case WIFI_AUTH_OPEN:
-						 authmode = "WIFI_AUTH_OPEN";
-						 break;
-					  case WIFI_AUTH_WEP:
-						 authmode = "WIFI_AUTH_WEP";
-						 break;
-					  case WIFI_AUTH_WPA_PSK:
-						 authmode = "WIFI_AUTH_WPA_PSK";
-						 break;
-					  case WIFI_AUTH_WPA2_PSK:
-						 authmode = "WIFI_AUTH_WPA2_PSK";
-						 break;
-					  case WIFI_AUTH_WPA_WPA2_PSK:
-						 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
-						 break;
-					  default:
-						 authmode = "Unknown";
-						 break;
-				   }
-				   sprintf(tempstring,"SSID:%s.RSSI:%3d.Authmode: %s.\n",list[i].ssid, list[i].rssi, authmode);
-				   printf(tempstring);
-				   strcat(info_tosend, tempstring);
-
-				}
-//				info_tosend = "";
-				printf("info_tosend:\n");
-				printf(info_tosend);
-//				free(list);
-//				printf("\nSelect WIFI and start the SSID password transmitting\n");
-//				xEventGroupSetBits(socket_status, READY_TO_SEND);
-				ready_send = 1;
-				ESP_LOGI(TAG,"Select WIFI and start the SSID password transmitting\n");
+////				xEventGroupWaitBits(socket_status,SCAN_DONE,false,true,portMAX_DELAY);
+//				ESP_ERROR_CHECK(esp_wifi_scan_get_ap_records(&apCount, list));
+//				for (int i=0; i<sta_num; i++) {
+//				   char *authmode;
+//				   switch(list[i].authmode) {
+//					  case WIFI_AUTH_OPEN:
+//						 authmode = "WIFI_AUTH_OPEN";
+//						 break;
+//					  case WIFI_AUTH_WEP:
+//						 authmode = "WIFI_AUTH_WEP";
+//						 break;
+//					  case WIFI_AUTH_WPA_PSK:
+//						 authmode = "WIFI_AUTH_WPA_PSK";
+//						 break;
+//					  case WIFI_AUTH_WPA2_PSK:
+//						 authmode = "WIFI_AUTH_WPA2_PSK";
+//						 break;
+//					  case WIFI_AUTH_WPA_WPA2_PSK:
+//						 authmode = "WIFI_AUTH_WPA_WPA2_PSK";
+//						 break;
+//					  default:
+//						 authmode = "Unknown";
+//						 break;
+//				   }
+//				   sprintf(tempstring,"SSID:%s.RSSI:%3d.Authmode: %s.\n",list[i].ssid, list[i].rssi, authmode);
+//				   printf(tempstring);
+//				   strcat(info_tosend, tempstring);
+//
+//				}
+////				info_tosend = "";
+//				printf("info_tosend:\n");
+//				printf(info_tosend);
+////				free(list);
+////				printf("\nSelect WIFI and start the SSID password transmitting\n");
+////				xEventGroupSetBits(socket_status, READY_TO_SEND);
+//				ready_send = 1;
+				ESP_LOGI("CMD Detect","Starting Transmitting Scan stations\n");
 				break;
 			}
 
@@ -408,16 +476,16 @@ static void send_via_socket (const int sock, const char* send_buffer)
 	int len = strlen(send_buffer);
 	printf("\nsend len %d\nSend_buffer:",len);
 	printf(send_buffer);
-	send(sock, send_buffer,len, 0);
-//	int to_write = len;
-//	while (to_write > 0) {
-//		int written = send(sock, send_buffer + (len - to_write), to_write, 0);
-//		if (written < 0) {
-//			ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
-//		}
-//		to_write -= written;
-//		printf("\nto_write:%d\n",to_write);
-//	}
+//	send(sock, send_buffer,len, 0);
+	int to_write = len;
+	while (to_write > 0) {
+		int written = send(sock, send_buffer + (len - to_write), to_write, 0);
+		if (written < 0) {
+			ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+		}
+		to_write -= written;
+		printf("\nto_write:%d\n",to_write);
+	}
 }
 
 static void do_retransmit(const int sock)
@@ -514,7 +582,6 @@ static void tcp_server_task(void *pvParameters)
     }
 
     while (1) {
-
         ESP_LOGI(TAG, "Socket listening");
 
         struct sockaddr_storage source_addr; // Large enough for both IPv4 or IPv6
@@ -539,6 +606,7 @@ static void tcp_server_task(void *pvParameters)
         printf("shutddown socket\n");
         close(sock);
         printf("\nClosed socket\n");
+        xEventGroupSetBits(socket_status, SOCKET_CLOSED);
     }
 
 CLEAN_UP:
@@ -550,5 +618,5 @@ void app_main(void)
 {
     ESP_ERROR_CHECK( nvs_flash_init() );
     initialise_wifi();
-    xTaskCreate(tcp_server_task, "tcp_server", 4096, (void*)AF_INET, 5, NULL);
+    xTaskCreate(tcp_server_task, "tcp_server", 4096, (void*)AF_INET, 5, &tcp_task_handle);
 }
